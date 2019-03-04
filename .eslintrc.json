@@ -1,4 +1,3 @@
-// Adapted from the Andela Engineering Playbook
 {
   "extends": [
     "airbnb",
@@ -14,7 +13,8 @@
     "sourceType": "module",
     "ecmaFeatures": {
       "jsx": true,
-      "modules": true
+      "modules": true,
+      "impliedStrict": true
     }
   },
   "rules": {
@@ -60,10 +60,8 @@
     "react/prefer-stateless-function": 0,
     "react/prop-types": 1,
     "react/react-in-jsx-scope": 1,
-    "react/require-extension": 1,
     "react/self-closing-comp": 1,
-    "react/sort-comp": 1,
-    "react/wrap-multilines": 1
+    "react/sort-comp": 1
   },
   "env": {
     "es6": true,
@@ -72,6 +70,8 @@
     "jest": true
   },
   "globals": {
-    "window": true
+    "window": true,
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly"
   }
 }
