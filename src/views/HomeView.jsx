@@ -1,9 +1,9 @@
 import React from 'react';
-import App from '../components/App';
+import AppContainer from "../containers/AppContainer";
 
 const HomeView = () => (
     <div>
-        <App />
+        <AppContainer />
     </div>
 );
 
