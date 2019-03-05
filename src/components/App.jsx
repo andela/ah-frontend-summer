@@ -1,14 +1,11 @@
-import React, { Component } from 'react';
-import '../styles/App.scss';
+import React from 'react';
 
-class App extends Component {
-    render() {
-        return (
-            <div className="App">
-                <h5>Welcome to Authors Haven</h5>
-            </div>
-        );
-    }
-}
+const App = () => {
+    return (
+        <div className="App">
+            <h5>Welcome to Authors Haven</h5>
+        </div>
+    );
+};
 
 export default App;
