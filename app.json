@@ -1,0 +1,14 @@
+{
+    "name": "ah-frontend-summer",
+    "description": "Authors' Haven is a platform for users to create and read articles.",
+    "scripts": {},
+    "env": {},
+    "formation": {},
+    "addons": [],
+    "buildpacks": [
+        {
+            "url": "mars/create-react-app"
+        }
+    ],
+    "stack": "heroku-18"
+}
