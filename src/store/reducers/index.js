@@ -1,5 +1,6 @@
 import { combineReducers } from 'redux';
 import {ENDED, FAILED, FETCH_HOME_PAGE_ACTION, STARTED, SUCCEEDED} from "../actions/async";
+import articlesReducer from './ArticlesReducer';
 
 // place holder reducer. we'll get rid of in the future as the actual reducers are defined
 const defaultReducer = (state={}, action) => {
@@ -25,7 +26,7 @@ const demoReducer = (state={status: "succeeded", loading: false}, action) => {
 // return the store itself if no changes are made
 // you can take this even further and split and combine each of these reducers using the same pattern
 const reducerParts = {
-    articles: defaultReducer,
+    articles: articlesReducer,
     article: defaultReducer,
     comments: defaultReducer,
     demo: demoReducer

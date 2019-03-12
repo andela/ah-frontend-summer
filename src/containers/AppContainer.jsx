@@ -4,10 +4,11 @@
 import React, { Component } from 'react';
 import {connect} from "react-redux";
 import App from "../components/App";
+import ArticlesListContainer from "./Articles/ArticlesListContainer";
 
 class AppContainer extends Component{
     render() {
-        return <App />;
+        return <ArticlesListContainer />;
     }
 }
 
