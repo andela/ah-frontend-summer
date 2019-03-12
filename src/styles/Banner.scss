@@ -1,0 +1,27 @@
+#banner-intro-text{
+  font-size: 1.4rem;
+  line-height: 2.2rem;
+}
+
+#banner-container{
+  background: url("../assets/images/books.jpg") no-repeat center left fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  width: 100%;
+  padding-bottom: 5rem;
+  padding-top: 5rem;
+}
+
+#banner-container{
+  color: whitesmoke;
+}
+
+#banner-heading{
+  font-size: 3rem;
+}
+
+#banner-sub-heading{
+  font-size: 2rem;
+}
