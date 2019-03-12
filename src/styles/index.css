@@ -16,3 +16,8 @@ code {
 .is-active {
 	font-weight: bold;
 }
+.Banner {
+	width: 100%;
+	background-color: aquamarine;
+	text-align: center;
+}
