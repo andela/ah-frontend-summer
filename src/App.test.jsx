@@ -3,13 +3,12 @@ import ReactDOM from 'react-dom';
 import { shallow } from 'enzyme';
 import {Provider} from "react-redux";
 import thunk from "redux-thunk";
-import configureStore from "redux-mock-store";
+import {applyMiddleware, createStore} from "redux";
 import Routes from './routes';
 import App from './components/App';
+import reducer from "./store/reducers";
 
-
-const middleware = [thunk];
-const mockStore = configureStore(middleware);
+const mockStore = createStore(reducer, applyMiddleware(thunk));
 
 describe('App rendering tests', () => {
     it('app renders without crashing', () => {
@@ -23,7 +22,7 @@ describe('App rendering tests', () => {
 
     it('routes render without crashing', () => {
         const div = document.createElement('div');
-        ReactDOM.render(<Provider store={mockStore()}><Routes /></Provider>, div);
+        ReactDOM.render(<Provider store={mockStore}><Routes /></Provider>, div);
         ReactDOM.unmountComponentAtNode(div);
     });
 });
