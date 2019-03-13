@@ -1,0 +1,157 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Login renders login component correctly 1`] = `
+<Login
+  loginError={true}
+  onChangeHandler={[MockFunction]}
+  onSubmitHandler={[MockFunction]}
+>
+  <div
+    className="LoginPage"
+  >
+    <Grid
+      columns={2}
+      stackable={true}
+    >
+      <div
+        className="ui stackable two column grid"
+      >
+        <GridColumn
+          width={7}
+        >
+          <div
+            className="seven wide column"
+          />
+        </GridColumn>
+        <GridColumn
+          floated="right"
+          width={7}
+        >
+          <div
+            className="right floated seven wide column"
+          >
+            <Card
+              fluid={true}
+            >
+              <div
+                className="ui fluid card"
+                onClick={[Function]}
+              >
+                <CardContent>
+                  <div
+                    className="content"
+                  >
+                    <div>
+                      <center>
+                        <h3
+                          className="cardHeader"
+                        >
+                          Author’s Haven
+                        </h3>
+                        <p
+                          className="cardDesc"
+                        >
+                          A Home of the Creative at Heart
+                        </p>
+                      </center>
+                    </div>
+                    <Message
+                      content="Incorrect email or password"
+                      negative={true}
+                    >
+                      <div
+                        className="ui negative message"
+                      >
+                        <MessageContent>
+                          <div
+                            className="content"
+                          >
+                            <p>
+                              Incorrect email or password
+                            </p>
+                          </div>
+                        </MessageContent>
+                      </div>
+                    </Message>
+                    <Form
+                      as="form"
+                      className="cardForm"
+                      onSubmit={[MockFunction]}
+                    >
+                      <form
+                        className="ui form cardForm"
+                        onSubmit={[Function]}
+                      >
+                        <center>
+                          <FormField>
+                            <div
+                              className="field"
+                            >
+                              <input
+                                name="email"
+                                onChange={[MockFunction]}
+                                placeholder="Email"
+                                style={
+                                  Object {
+                                    "width": "50%",
+                                  }
+                                }
+                                type="text"
+                              />
+                            </div>
+                          </FormField>
+                          <FormField>
+                            <div
+                              className="field"
+                            >
+                              <input
+                                name="password"
+                                onChange={[MockFunction]}
+                                placeholder="Password"
+                                style={
+                                  Object {
+                                    "width": "50%",
+                                  }
+                                }
+                                type="password"
+                              />
+                            </div>
+                          </FormField>
+                          <button
+                            className="cardButton"
+                            type="submit"
+                          >
+                            Sign in
+                          </button>
+                        </center>
+                      </form>
+                    </Form>
+                    <div
+                      className="divide"
+                    >
+                      <center>
+                        <h3>
+                          OR
+                        </h3>
+                      </center>
+                    </div>
+                    <div
+                      className="divide"
+                    >
+                      <center>
+                        <a>
+                          Sign up
+                        </a>
+                      </center>
+                    </div>
+                  </div>
+                </CardContent>
+              </div>
+            </Card>
+          </div>
+        </GridColumn>
+      </div>
+    </Grid>
+  </div>
+</Login>
+`;

@@ -1,0 +1,66 @@
+.LoginPage {
+    background: url("../styles/images/write.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 750px;
+    margin: 30px;
+  }
+  
+  .InvalidInput {
+    border-color: #dc3545;
+  }
+  .cardHeader {
+    font-family:'Spectral';
+    font-size: 2em;
+    align-items: center;
+    margin: 0;
+  }
+  .cardDesc{
+    font-family:'Roboto';
+    font-size: 1.1em;
+    color: #008080;
+    font-style: initial;
+  }
+  .cardForm{
+    margin-top: 30px;
+  }
+  .cardButton{
+    background: #008080;
+    color: white;
+    border-radius: 1in;
+    width: 25%;
+    height: 40px;
+    font-size: 16px;
+  }
+  .divide{
+    margin-top: 20px;
+  }
+  .divide a {
+    color: #008080;
+    font-family: 'Roboto, san-serif';
+    font-size: '16px';
+  }
+  .faceBookButton{
+    border-radius: 10px;
+    background-color: #4367B2 ;
+    display: inline-flex; 
+    align-items: center;
+    align-content: center;
+    width: 32%;
+    color: white;
+    height: 40px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 2px 2px 0px, rgba(0, 0, 0, 0.24) 0px 0px 1px 0px; 
+    padding: 0px; 
+    border-radius: 2px; 
+    border: 1px solid transparent; 
+    font-size: 14px; 
+    font-weight: 500; 
+    font-family: Roboto, sans-serif;
+  }
+  .faceBookButton i{
+    margin: 0 15px;
+  }
+  .googleButton{
+    border-radius: 10px; 
+  }
+  

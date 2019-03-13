@@ -1,0 +1,11 @@
+.ui.fluid.card{
+    border-radius: 0 !important ;
+    margin-top: 100px;
+}
+.ui.column.grid{
+    margin-right: 100px !important;
+}
+.ui.form input[type=text], .ui.form input[type=password]{
+    font-family: 'Roboto' !important;
+    border-color: black !important;
+}

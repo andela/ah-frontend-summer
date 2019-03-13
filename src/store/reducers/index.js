@@ -1,5 +1,6 @@
 import { combineReducers } from 'redux';
 import {ENDED, FAILED, FETCH_HOME_PAGE_ACTION, STARTED, SUCCEEDED} from "../actions/async";
+import { loginReducer } from "./login";
 
 // place holder reducer. we'll get rid of in the future as the actual reducers are defined
 const defaultReducer = (state={}, action) => {
@@ -28,7 +29,8 @@ const reducerParts = {
     articles: defaultReducer,
     article: defaultReducer,
     comments: defaultReducer,
-    demo: demoReducer
+    demo: demoReducer,
+    login: loginReducer
 };
 
 // we combine the individual parts
