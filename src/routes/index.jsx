@@ -4,6 +4,8 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Layout from '../hoc/layout/Layout';
 import HomeView from '../views/HomeView';
 import LoginView from '../views/LoginView';
+import SignupView from '../views/Auth/Signup';
+import EmailVerificationView from '../views/Auth/verification';
 
 
 const Routes = () => (
@@ -11,10 +13,11 @@ const Routes = () => (
         <div>
             <Switch>
                 <Route path="/login" component={LoginView} />
-                <Route path="/signup" component={LoginView} />
+                <Route path="/signup" component={SignupView} />
                 <Layout>
                     <Route path="/" exact component={HomeView} />
                     <Route path="/tags" component={LoginView} />
+                    <Route path="/email-verification/:token" exact component={EmailVerificationView} />
                 </Layout>
             </Switch>
         </div>
