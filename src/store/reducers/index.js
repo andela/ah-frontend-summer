@@ -1,4 +1,6 @@
 import { combineReducers } from 'redux';
+import loginReducer from "./login";
+
 import navBarReducer from './navBarReducer';
 import authReducer from './auth';
 import articlesReducer from "./ArticlesReducer";
@@ -10,6 +12,7 @@ const reducerParts = {
     navBar: navBarReducer,
     auth: authReducer,
     articles: articlesReducer,
+    login: loginReducer
 };
 
 // we combine the individual parts

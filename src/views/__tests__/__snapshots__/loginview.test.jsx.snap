@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`login view renders loginView component correctly 1`] = `
+<Login
+  email=""
+  isEmailValid={true}
+  loading={false}
+  loginError=""
+  onBlurHandler={[Function]}
+  onChangeHandler={[Function]}
+  onDismissHandler={[Function]}
+  onSubmitHandler={[Function]}
+  password=""
+/>
+`;

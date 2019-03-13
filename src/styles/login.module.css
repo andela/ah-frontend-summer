@@ -1,0 +1,38 @@
+.LoginPage {
+    background: url("https://images.unsplash.com/photo-1518515193511-c19415446b31?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=60");
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100vh;
+    display: grid;
+    align-items: center;
+  }
+  
+  .InvalidInput {
+    border-color: #dc3545;
+  }
+  .cardHeader {
+    font-family:'Spectral';
+    font-size: 2em;
+    align-items: center;
+    margin: 0;
+  }
+  .cardDesc{
+    font-family:'Roboto';
+    font-size: 1.1em;
+    color: #008080;
+    font-style: initial;
+  }
+  .cardForm{
+    margin-top: 30px;
+  }
+  .cardButton{
+    background: #008080;
+    color: white;
+    border-radius: 1in;
+    width: 25%;
+    height: 40px;
+  }
+  .spaceComponents {
+    margin: 5%;
+}
+  
