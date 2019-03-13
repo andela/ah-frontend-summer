@@ -1,0 +1,16 @@
+.ui.fluid.card{
+    border-radius: 0 !important ;
+    margin-top: 100px;
+}
+.ui.form input[type=text], .ui.form input[type=password]{
+    font-family: 'Roboto' !important;
+    border-radius: 0;
+}
+
+.login .ui.button {
+    background: #008080;
+    color: white;
+    border-radius: 1in;
+    width: 25%;
+    height: 40px;
+}
