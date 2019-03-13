@@ -1,0 +1,48 @@
+.mainMenu{
+    margin: 0 10vh !important;
+}
+
+.avatar{
+    margin: 20px 0 0 10px !important;
+    color: #008080;
+}
+
+.bellNotification{
+    margin: 25px 0 0 5px !important;
+}
+.Branding {
+    height: 80px;
+}
+
+ /* media queries */
+@media (max-width: 767px) {
+    .mainMenu{
+        margin: 0 0.2vh !important;
+    }
+    
+    .avatar{
+        margin: 20px 10px 0 10px !important;
+    }
+    
+    .bellNotification{
+        height:35px;
+    }
+}
+
+@media (max-width: 414px) {
+    .navItems{
+        display: none !important;
+    }
+
+    .mainMenu{
+        margin: 0 0.2vh !important;
+    }
+    
+    .avatar{
+        margin: 20px 10px 0 10px !important;
+    }
+    
+    .bellNotification{
+        height:35px;
+    }
+}

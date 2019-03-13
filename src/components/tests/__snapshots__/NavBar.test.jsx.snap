@@ -1,0 +1,167 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Navbar test should render Navbar with default state 1`] = `
+<div>
+  <Menu
+    className="mainMenu"
+    secondary={true}
+  >
+    <MenuItem
+      header={true}
+    >
+      <NavLink
+        activeClassName="active"
+        aria-current="page"
+        to="/"
+      >
+        <Image
+          as="img"
+          src="branding.png"
+          ui={true}
+        />
+      </NavLink>
+    </MenuItem>
+    <MenuMenu
+      position="right"
+    >
+      <MenuItem
+        className="navItems"
+        name="menu"
+      >
+        <NavLink
+          activeClassName="active"
+          aria-current="page"
+          to="/"
+        >
+          Home
+        </NavLink>
+      </MenuItem>
+      <MenuItem
+        className="navItems"
+        name="tags"
+      >
+        <NavLink
+          activeClassName="active"
+          aria-current="page"
+          to="/"
+        >
+          Tags
+        </NavLink>
+      </MenuItem>
+      <MenuMenu
+        position="right"
+      >
+        <MenuItem
+          className="navItems"
+          name="signIn"
+        >
+          <NavLink
+            activeClassName="active"
+            aria-current="page"
+            to="/login"
+          >
+            Sign in
+          </NavLink>
+        </MenuItem>
+        <MenuItem>
+          <NavLink
+            activeClassName="active"
+            aria-current="page"
+            to="/signup"
+          >
+            <Button
+              as="button"
+              basic={true}
+              className="getStartedBtn"
+              color="teal"
+            >
+              Get Started
+            </Button>
+          </NavLink>
+        </MenuItem>
+      </MenuMenu>
+    </MenuMenu>
+  </Menu>
+</div>
+`;
+
+exports[`Navbar test should render Navbar with logged in state 1`] = `
+<div>
+  <Menu
+    className="mainMenu"
+    secondary={true}
+  >
+    <MenuItem
+      header={true}
+    >
+      <NavLink
+        activeClassName="active"
+        aria-current="page"
+        to="/"
+      >
+        <Image
+          as="img"
+          src="branding.png"
+          ui={true}
+        />
+      </NavLink>
+    </MenuItem>
+    <MenuMenu
+      position="right"
+    >
+      <MenuItem
+        className="navItems"
+        name="menu"
+      >
+        <NavLink
+          activeClassName="active"
+          aria-current="page"
+          to="/"
+        >
+          Home
+        </NavLink>
+      </MenuItem>
+      <MenuItem
+        className="navItems"
+        name="tags"
+      >
+        <NavLink
+          activeClassName="active"
+          aria-current="page"
+          to="/"
+        >
+          Tags
+        </NavLink>
+      </MenuItem>
+      <MenuMenu
+        position="right"
+      >
+        <NavLink
+          activeClassName="active"
+          aria-current="page"
+          to="/notifications"
+        >
+          <Icon
+            as="i"
+            className="bellNotification"
+            name="bell outline"
+            size="large"
+          />
+        </NavLink>
+        <NavLink
+          activeClassName="active"
+          aria-current="page"
+          to="/profile"
+        >
+          <Icon
+            as="i"
+            className="avatar"
+            name="user circle"
+            size="big"
+          />
+        </NavLink>
+      </MenuMenu>
+    </MenuMenu>
+  </Menu>
+</div>
+`;
