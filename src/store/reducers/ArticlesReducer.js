@@ -21,5 +21,5 @@ const articlesReducer = (state={
     default:
         return state;
     }
-}
-export default articlesReducer
+};
+export default articlesReducer;

@@ -1,27 +1,63 @@
-import React from 'react'
-import { Item, Container } from "semantic-ui-react"
-import oneArticle from '../../assets/images/oneArticle.jpg';
-
+import React from 'react';
+import {Card, Container, Grid, Header, Image} from "semantic-ui-react";
+import {Link} from "react-router-dom";
+import PropTypes from "prop-types";
+import Thumbnail from "../../assets/images/thumbnail.jpg";
 
 const ArticleCard = (props) => {
-  return (
-    <div>
-      {/* <h2>Title: { props.article.title }</h2>
-      <h4>Slug: { props.article.slug }</h4> */}
-    <Item>
-      <Item.Image size='medium' src={oneArticle} />
+    const { article } = props;
+    let name = article.author.first_name + " " + article.author.last_name;
+    name = article.author.first_name && article.author.last_name ? name : article.author.username;
+    const created_at = article.created_at.substr(0, article.created_at.indexOf('T'));
+    return (
+        <Link className="black" to={"/articles/" + article.slug}>
+            <Card fluid className="article-card">
+                <Grid columns={2} stackable>
+                    <Grid.Row stretched>
+                        <Grid.Column width={6}>
+                            {article.image ?
+                                <Image className="article-thumbnail" size="medium" src={article.image} /> :
+                                <Image className="article-thumbnail" size="medium" src={Thumbnail} />
+                            }
+                        </Grid.Column>
+                        <Grid.Column verticalAlign="middle" width={10}>
+                            <Container>
+                                <Grid stackable>
+                                    <Grid.Row>
+                                        <Grid.Column width={5}>
+                                            {created_at}
+                                        </Grid.Column>
+                                        <Grid.Column width={5}>
+                                            {article.read_time}
+                                        </Grid.Column>
+                                        <Grid.Column width={5}>
+                                            {name}
+                                        </Grid.Column>
+                                    </Grid.Row>
+                                    <Grid.Row>
+                                        <Grid.Column>
+                                            <Header className="article-header" as="h2">
+                                                {article.title}
+                                            </Header>
+                                        </Grid.Column>
+                                    </Grid.Row>
+                                    <Grid.Row fluid>
+                                        <Grid.Column>
+                                            {article.description}
+                                        </Grid.Column>
+                                    </Grid.Row>
+                                </Grid>
+                            </Container>
+                        </Grid.Column>
+                    </Grid.Row>
+                </Grid>
+            </Card>
+        </Link>
+    );
+};
 
+ArticleCard.propTypes = {
+    article: PropTypes.object.isRequired
+};
 
-      <Item.Content>
-        <Item.Header as='a'>{ props.article.title }</Item.Header>
-        <Item.Description>
-          <p>Many people also have their own barometers for what makes a cute dog.t makes a cute dog</p>
-        </Item.Description>
-      </Item.Content>
-    </Item>
-    <br/><br/>
-    </div>
-  )
-}
-
-export default ArticleCard
+export default ArticleCard;

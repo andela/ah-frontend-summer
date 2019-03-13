@@ -4,7 +4,6 @@ import {Provider} from "react-redux";
 import * as serviceWorker from './serviceWorker';
 import store from "./store";
 import './styles/index.scss';
-import 'semantic-ui-css/semantic.min.css';
 import Routes from "./routes";
 
 

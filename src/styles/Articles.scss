@@ -1,0 +1,39 @@
+div.ui.fluid.card.article-card{
+  margin: 3rem 0;
+  font-size: larger;
+  box-shadow: 0 5px 3px 2px #d4d4d5,0 0 0 1px #d4d4d5;
+}
+
+div.ui.fluid.card.article-card:hover{
+  box-shadow: 0 7px 3px 3px #d4d4d5,0 0 0 1px #d4d4d5;
+}
+
+.article-list{
+  padding: 0 4rem;
+  margin: 3rem 0;
+}
+
+h2.ui.header.article-header{
+  margin-top: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.article-thumbnail.ui.medium.image{
+  width: 350px;
+}
+
+a.black{
+  color: black;
+}
+
+a.black:hover{
+  color: black;
+}
+
+#landing-page-more-articles{
+  float: right;
+}
+
+#article-loading-image{
+  opacity: 0.3;
+}
