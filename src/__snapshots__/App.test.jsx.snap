@@ -9,3 +9,31 @@ exports[`App rendering tests renders consistently 1`] = `
   </h5>
 </div>
 `;
+
+exports[`App rendering tests renders without crashing 1`] = `
+<BrowserRouter>
+  <div>
+    <Switch>
+      <Route
+        component={[Function]}
+        path="/login"
+      />
+      <Route
+        component={[Function]}
+        path="/signup"
+      />
+      <Layout>
+        <Route
+          component={[Function]}
+          exact={true}
+          path="/"
+        />
+        <Route
+          component={[Function]}
+          path="/tags"
+        />
+      </Layout>
+    </Switch>
+  </div>
+</BrowserRouter>
+`;
