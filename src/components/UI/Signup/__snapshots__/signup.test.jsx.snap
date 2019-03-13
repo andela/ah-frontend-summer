@@ -1,0 +1,130 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Signup /> Signup will render without crashing 1`] = `
+<div
+  className="SignupForm"
+>
+  <Grid
+    columns={2}
+    relaxed="very"
+    stackable={true}
+  >
+    <GridColumn />
+    <GridColumn
+      padded="very"
+    >
+      <Segment
+        color="green"
+        padded="very"
+      >
+        <Header
+          as="h1"
+          padded="very"
+          textAlign="center"
+        >
+          Authors Haven
+        </Header>
+        <Header
+          as="h3"
+          color="teal"
+          textAlign="center"
+        >
+          A home for the creative at heart
+        </Header>
+        <Header
+          as="h5"
+          textAlign="center"
+        >
+          Signup to see more
+        </Header>
+        <Form
+          as="form"
+        >
+          <div
+            className="spaceComponents"
+          >
+            <FormInput
+              as={[Function]}
+              color="red"
+              control={[Function]}
+              icon="user"
+              iconPosition="left"
+              isfieldempty="isEmailEmpty"
+              name="email"
+              placeholder="Email"
+              required={true}
+            />
+            <FormInput
+              as={[Function]}
+              color="red"
+              control={[Function]}
+              icon="user"
+              iconPosition="left"
+              name="username"
+              placeholder="Username"
+              required={true}
+            />
+            <FormInput
+              as={[Function]}
+              control={[Function]}
+              icon="lock"
+              iconPosition="left"
+              name="password"
+              placeholder="Password"
+              required={true}
+              type="password"
+            />
+            <FormInput
+              as={[Function]}
+              control={[Function]}
+              icon="lock"
+              iconPosition="left"
+              name="cPassword"
+              placeholder="Confirm password"
+              required={true}
+              type="password"
+            />
+          </div>
+          <div
+            className="spaceComponents"
+          >
+            <center>
+              <Button
+                as="button"
+                centered={true}
+                className="SignupBtn"
+                color="teal"
+                size="big"
+              >
+                Signup
+              </Button>
+            </center>
+          </div>
+        </Form>
+        <Divider
+          horizontal={true}
+        >
+          Or
+        </Divider>
+        <div
+          className="spaceComponents"
+        >
+          <NavLink
+            activeClassName="active"
+            aria-current="page"
+            to="/login"
+          >
+            <Header
+              color="teal"
+              padded="very"
+              textAlign="center"
+            >
+              Login
+            </Header>
+          </NavLink>
+        </div>
+      </Segment>
+    </GridColumn>
+  </Grid>
+</div>
+`;
