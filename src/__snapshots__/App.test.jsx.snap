@@ -32,6 +32,11 @@ exports[`App rendering tests renders without crashing 1`] = `
           component={[Function]}
           path="/tags"
         />
+        <Route
+          component={[Function]}
+          exact={true}
+          path="/email-verification/:token"
+        />
       </Layout>
     </Switch>
   </div>
@@ -59,6 +64,11 @@ exports[`App rendering tests renders without crashing 2`] = `
         <Route
           component={[Function]}
           path="/tags"
+        />
+        <Route
+          component={[Function]}
+          exact={true}
+          path="/email-verification/:token"
         />
       </Layout>
     </Switch>

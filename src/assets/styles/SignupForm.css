@@ -1,0 +1,15 @@
+.SignupForm {
+    height: 100vh;
+    display: grid;
+    grid-gap: 5px;
+    align-items: center;
+    margin-right: 7%;
+}
+
+.spaceComponents {
+    margin: 5%;
+}
+
+.SignupBtn {
+    border-radius: 10px !important;
+}
