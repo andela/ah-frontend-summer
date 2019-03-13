@@ -1,12 +1,18 @@
 import { FETCH_ARTICLES_ACTION } from "../actions/async/ArticleActions";
 import {ENDED, FAILED, STARTED, SUCCEEDED} from "../actions/async";
 
-const articlesReducer = (state={
+export const defaultState = {
     articles : [],
     status: "succeeded",
     loading: false,
     errors: ""
-}, action) => {
+};
+
+const articlesReducer = (state=defaultState, action) => {
+
+    if (typeof action === 'undefined'){
+        return state;
+    }
 
     switch(action.type){
     case FETCH_ARTICLES_ACTION + STARTED:
@@ -15,7 +21,7 @@ const articlesReducer = (state={
         return {...state, status: "succeeded",
             articles: action.payload.data.articles.results};
     case FETCH_ARTICLES_ACTION + FAILED:
-        return {...state, status: "failed", errors: action.payload.data};
+        return {...state, status: "failed", errors: action.payload.message};
     case FETCH_ARTICLES_ACTION + ENDED:
         return {...state, loading: false};
     default:

@@ -3,7 +3,7 @@
  */
 import React, { Component } from 'react';
 import {connect} from "react-redux";
-import ArticlesListContainer from "./articles/ArticlesListContainer";
+import ArticlesListContainer from "./Articles/ArticleListContainer";
 
 class AppContainer extends Component{
     render() {

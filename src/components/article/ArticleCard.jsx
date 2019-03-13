@@ -30,7 +30,7 @@ const ArticleCard = (props) => {
                                         <Grid.Column width={5}>
                                             {article.read_time}
                                         </Grid.Column>
-                                        <Grid.Column width={5}>
+                                        <Grid.Column id="article-author-name" width={5}>
                                             {name}
                                         </Grid.Column>
                                     </Grid.Row>

@@ -5,11 +5,11 @@ import ArticleList from '../../components/article/ArticleList';
 import { fetchArticlesAction } from '../../store/actions/async/ArticleActions';
 import ArticleLoading from "../../components/article/ArticleLoading";
 
-class ArticlesList extends Component {
+export class ArticleListContainer extends Component {
 
     componentDidMount(){
         const { fetchArticles } = this.props;
-        return fetchArticles();
+        fetchArticles();
     }
 
     render() {
@@ -36,13 +36,13 @@ const mapDispatchToProps = (dispatch) => {
     };
 };
 
-ArticlesList.propTypes = {
+ArticleListContainer.propTypes = {
     loading: PropTypes.bool,
     fetchArticles : PropTypes.func.isRequired
 };
 
-ArticlesList.defaultProps = {
+ArticleListContainer.defaultProps = {
     loading: true
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(ArticlesList);
+export default connect(mapStateToProps, mapDispatchToProps)(ArticleListContainer);

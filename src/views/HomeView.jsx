@@ -1,6 +1,6 @@
 import React from 'react';
 import BannerContainer from "../containers/BannerContainer";
-import ArticlesListContainer from "../containers/Articles/ArticlesListContainer";
+import ArticlesListContainer from "../containers/Articles/ArticleListContainer";
 
 
 const HomeView = () => (
