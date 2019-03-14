@@ -11,15 +11,13 @@ const mockStore = configureStore(middleware);
 const store = mockStore({});
 
 describe("Article Actions Tests", () => {
+    beforeEach(() => {
+        store.clearActions();
+    });
+
     it("dispatches correct action on successful response", (done) => {
-        axios.get.mockResolvedValue({
-            data: {
-                articles: {
-                    results: []
-                }
-            }
-        }
-        );
+        axios.get.mockResolvedValue();
+
         // dispatch async action
         store.dispatch(fetchArticlesAction()).then(() => {
             const actions = store.getActions();
@@ -32,11 +30,7 @@ describe("Article Actions Tests", () => {
     });
 
     it("dispatches correct action on failure", (done) => {
-        axios.get.mockRejectedValue({
-            response: {
-                status: 400
-            }
-        });
+        axios.get.mockRejectedValue();
 
         // dispatch async action
         store.dispatch(fetchArticlesAction()).then(() => {

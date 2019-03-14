@@ -10,4 +10,4 @@ const fetchArticles = () => {
 
 };
 
-export const fetchArticlesAction = createActionThunk(FETCH_ARTICLES_ACTION, fetchArticles);
+export const fetchArticlesAction = createActionThunk(FETCH_ARTICLES_ACTION, fetchArticles, true);

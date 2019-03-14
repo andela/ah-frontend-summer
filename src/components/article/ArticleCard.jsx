@@ -41,7 +41,7 @@ const ArticleCard = (props) => {
                                             </Header>
                                         </Grid.Column>
                                     </Grid.Row>
-                                    <Grid.Row fluid>
+                                    <Grid.Row>
                                         <Grid.Column>
                                             {article.description}
                                         </Grid.Column>
