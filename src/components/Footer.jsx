@@ -4,7 +4,7 @@ import '../styles/footer.css';
 
 const Footer = () => (
     <div>
-        <Menu fixed="bottom" borderless className="footerMenu">
+        <Menu borderless className="footerMenu">
             <Segment vertical>
                 <Container textAlign="center">
                     <Icon size="large" name="facebook f" />

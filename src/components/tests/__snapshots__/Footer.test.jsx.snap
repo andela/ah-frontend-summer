@@ -5,7 +5,6 @@ exports[`Footer test render component without failing 1`] = `
   <Menu
     borderless={true}
     className="footerMenu"
-    fixed="bottom"
   >
     <Segment
       vertical={true}

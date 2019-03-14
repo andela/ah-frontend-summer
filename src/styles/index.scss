@@ -1,8 +1,10 @@
 @import '~semantic-ui-css/semantic.min.css';
 @import 'Articles';
-@import url('https://fonts.googleapis.com/css?family=Nunito');
+@import 'Banner';
+@import url('../assets/fonts/nunito/font.css');
 
-body {
+body,
+.ui {
   font-family: 'Nunito', sans-serif !important;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
@@ -10,11 +12,10 @@ body {
   padding: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-		monospace;
-}
-
 .is-active {
   font-weight: bold;
+}
+
+.content-wrapper {
+  margin-bottom: 10rem;
 }

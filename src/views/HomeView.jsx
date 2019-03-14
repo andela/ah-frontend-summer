@@ -1,10 +1,12 @@
 import React from 'react';
-import ArticlesListContainer from "../containers/Articles/ArticleListContainer";
+import ArticleListContainer from "../containers/Articles/ArticleListContainer";
+import BannerContainer from "../containers/BannerContainer";
 
 
 const HomeView = () => (
     <div>
-        <ArticlesListContainer title="Recent Articles" paginating={false} />
+        <BannerContainer />
+        <ArticleListContainer title="Recent Articles" paginating={false} />
     </div>
 );
 

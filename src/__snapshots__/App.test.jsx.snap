@@ -30,6 +30,11 @@ exports[`App rendering tests renders without crashing 1`] = `
         />
         <Route
           component={[Function]}
+          exact={true}
+          path="/articles"
+        />
+        <Route
+          component={[Function]}
           path="/tags"
         />
         <Route
@@ -60,6 +65,11 @@ exports[`App rendering tests renders without crashing 2`] = `
           component={[Function]}
           exact={true}
           path="/"
+        />
+        <Route
+          component={[Function]}
+          exact={true}
+          path="/articles"
         />
         <Route
           component={[Function]}
