@@ -2,6 +2,7 @@
 import  React, { Component } from 'react';
 import propTypes from 'prop-types';
 import Navbar from '../../components/Navbar';
+import Footer from '../../components/Footer';
 
 class Layout extends Component {
     render() {
@@ -10,6 +11,7 @@ class Layout extends Component {
             <div>
                 <Navbar />
                 {children}
+                <Footer />
             </div>
         );
     }

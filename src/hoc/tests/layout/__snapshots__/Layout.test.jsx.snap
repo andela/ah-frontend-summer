@@ -3,5 +3,6 @@
 exports[`Layout tests render component without failing 1`] = `
 <div>
   <Connect(Navbar) />
+  <Footer />
 </div>
 `;

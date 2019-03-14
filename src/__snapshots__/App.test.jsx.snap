@@ -37,3 +37,31 @@ exports[`App rendering tests renders without crashing 1`] = `
   </div>
 </BrowserRouter>
 `;
+
+exports[`App rendering tests renders without crashing 2`] = `
+<BrowserRouter>
+  <div>
+    <Switch>
+      <Route
+        component={[Function]}
+        path="/login"
+      />
+      <Route
+        component={[Function]}
+        path="/signup"
+      />
+      <Layout>
+        <Route
+          component={[Function]}
+          exact={true}
+          path="/"
+        />
+        <Route
+          component={[Function]}
+          path="/tags"
+        />
+      </Layout>
+    </Switch>
+  </div>
+</BrowserRouter>
+`;

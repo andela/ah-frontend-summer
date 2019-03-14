@@ -34,4 +34,9 @@ describe('App rendering tests', () => {
         ReactDOM.render(<Provider store={mockStore}><Routes /></Provider>, div);
         ReactDOM.unmountComponentAtNode(div);
     });
+
+    it('renders without crashing', ()=> {
+        const wrapper =  shallow(<Routes />);
+        expect(wrapper).toMatchSnapshot();
+    });
 });

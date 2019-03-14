@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer test render component without failing 1`] = `
+<div>
+  <Menu
+    borderless={true}
+    className="footerMenu"
+    fixed="bottom"
+  >
+    <Segment
+      vertical={true}
+    >
+      <Container
+        textAlign="center"
+      >
+        <Icon
+          as="i"
+          name="facebook f"
+          size="large"
+        />
+        <Icon
+          as="i"
+          name="instagram"
+          size="large"
+        />
+        <Icon
+          as="i"
+          name="twitter"
+          size="large"
+        />
+      </Container>
+      <Container
+        textAlign="center"
+      >
+        <List
+          horizontal={true}
+          size="small"
+        >
+          <ListItem>
+            <ListContent>
+              © 2019 by Author's Haven. Proudly created with Andela
+            </ListContent>
+          </ListItem>
+        </List>
+      </Container>
+    </Segment>
+  </Menu>
+</div>
+`;
