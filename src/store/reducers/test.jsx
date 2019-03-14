@@ -24,7 +24,7 @@ describe('Article Reducer Tests', () => {
             type: successAction.type + SUCCEEDED,
             payload: successAction.payload
         });
-        expect(state.status).toEqual("succeeded");
+        expect(state.status).toEqual(SUCCEEDED);
     });
 
     it('returns right state after action failed', () => {
@@ -32,7 +32,7 @@ describe('Article Reducer Tests', () => {
             type: successAction.type + FAILED,
             payload: successAction.payload
         });
-        expect(state.status).toEqual("failed");
+        expect(state.status).toEqual(FAILED);
         expect(state.errors).toBeTruthy();
     });
 
@@ -42,7 +42,7 @@ describe('Article Reducer Tests', () => {
             payload: successAction.payload
         });
         expect(state.loading).toBeTruthy();
-        expect(state.status).toEqual("started");
+        expect(state.status).toEqual(STARTED);
     });
 
     it('returns right state after action is ended', () => {

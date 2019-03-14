@@ -3,6 +3,8 @@ import React from "react";
 import ArticleCard from "./ArticleCard";
 import {Link, StaticRouter} from "react-router-dom";
 import ArticleList from "./ArticleList";
+import ArticleError from "./ArticleError";
+import {Button} from "semantic-ui-react";
 
 const article = {
     "slug": "test",
@@ -56,6 +58,13 @@ describe('Article Components Tests', () => {
         it('renders correctly', () => {
             const articleListWrapper = shallow(<ArticleList title="test" loading={false} articles={[article, article]} />);
             expect(articleListWrapper.find(ArticleCard)).toHaveLength(2);
+        });
+    });
+
+    describe('ArticleError', () => {
+        it('renders correctly', () => {
+            const articleErrorWrapper = shallow(<ArticleError retry={() => {}} />);
+            expect(articleErrorWrapper.exists(Button)).toBeTruthy();
         });
     });
 });

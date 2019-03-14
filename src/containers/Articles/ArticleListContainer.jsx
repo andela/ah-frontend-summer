@@ -13,14 +13,14 @@ export class ArticleListContainer extends Component {
         this.fetchArticles();
     }
 
-    fetchArticles(){
+    fetchArticles = () => {
         const { loading } = this.props;
         if (loading){
             return;
         }
         const { fetchArticles } = this.props;
         fetchArticles();
-    }
+    };
 
     render() {
         const { loading, status } = this.props;

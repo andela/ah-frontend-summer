@@ -1,13 +1,16 @@
-import {Button, Container} from "semantic-ui-react";
+import {Button, Container, Header, Icon, Message} from "semantic-ui-react";
 import PropTypes from 'prop-types';
 import React from 'react';
 
 const ArticleError = (props) => {
     const { retry } = props;
     return (
-        <Container>
-            Could not load Articles
-            <Button size="medium" onClick={retry}>Retry</Button>
+        <Container textAlign='center'>
+            <Icon size="big" color="teal" name="exclamation triangle" />
+            <br />
+            <Header as="h3">Could not load Articles</Header>
+            <br />
+            <Button size="large" basic color="teal" onClick={retry}>Retry</Button>
         </Container>
     );
 };

@@ -4,6 +4,8 @@ import { ArticleListContainer } from "./ArticleListContainer";
 import ArticleList from "../../components/article/ArticleList";
 import ArticleLoading from "../../components/article/ArticleLoading";
 import ArticleCard from "../../components/article/ArticleCard";
+import {FAILED, SUCCEEDED} from "../../store/actions/async";
+import ArticleError from "../../components/article/ArticleError";
 
 const article = {
     "slug": "test",
@@ -41,14 +43,19 @@ const article = {
 
 describe('ArticleList Container Tests', () => {
     describe('ArticleListContainer', () => {
-        it('renders correctly', () => {
-            // render loading when loading
-            let articleListContainerWrapper = shallow(<ArticleListContainer title="test" loading={true} fetchArticles={() => {}} articles={[article, article]} />);
+        it('renders correctly when loading', () => {
+            let articleListContainerWrapper = shallow(<ArticleListContainer title="test" status={SUCCEEDED} loading={true} fetchArticles={() => {}} articles={[article, article]} />);
             expect(articleListContainerWrapper.exists(ArticleLoading)).toBeTruthy();
+        });
 
-            // render articles when not loading
-            articleListContainerWrapper = shallow(<ArticleListContainer title="test" loading={false} fetchArticles={() => {}} articles={[article, article]} />);
+        it('renders correctly when status is succeeded', () => {
+            let articleListContainerWrapper = shallow(<ArticleListContainer title="test" status={SUCCEEDED} loading={false} fetchArticles={() => {}} articles={[article, article]} />);
             expect(articleListContainerWrapper.exists(ArticleList)).toBeTruthy();
+        });
+
+        it('renders correctly when status is failed', () => {
+            let articleListContainerWrapper = shallow(<ArticleListContainer title="test" status={FAILED} loading={false} fetchArticles={() => {}} articles={[article, article]} />);
+            expect(articleListContainerWrapper.exists(ArticleError)).toBeTruthy();
         });
     });
 });
