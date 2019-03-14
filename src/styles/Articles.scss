@@ -1,0 +1,55 @@
+$light: #d4d4d5;
+$black: #000000;
+$teal: #008080;
+
+.ui.fluid.card.article-card {
+  box-shadow: 0 5px 3px 2px $light, 0 0 0 1px $light;
+  font-size: larger;
+  margin: 3rem 0;
+}
+
+.ui.fluid.card.article-card:hover {
+  box-shadow: 0 7px 3px 3px $light, 0 0 0 1px $light;
+}
+
+.article-list {
+  margin: 3rem 0;
+}
+
+.ui.header.article-header {
+  margin-bottom: 2.5rem;
+  margin-top: 1rem;
+}
+
+.article-thumbnail.ui.medium.image {
+  width: 350px;
+}
+
+.black {
+  color: $black;
+}
+
+.black:hover {
+  color: $black;
+}
+
+.more-articles-button {
+  float: right;
+}
+
+.article-loading-image {
+  opacity: .3;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.article-info {
+  font-size: smaller;
+  font-weight: bold;
+}
+
+.article-card-title {
+  color: $teal;
+}

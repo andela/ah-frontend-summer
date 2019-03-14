@@ -2,18 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { shallow } from 'enzyme';
 import { Provider } from "react-redux";
-import { createStore, applyMiddleware } from 'redux';
 import thunk from "redux-thunk";
-import configureStore from "redux-mock-store";
-import reducer from "./store/reducers";
+import {applyMiddleware, createStore} from "redux";
 import Routes from './routes';
 import App from './components/App';
+import reducer from "./store/reducers";
 
 
-const mockStore = createStore(
-    reducer, // , pass in the main reducer
-    applyMiddleware(thunk) // , apply any middleware we are making use of
-);
+const mockStore = createStore(reducer, applyMiddleware(thunk));
 
 describe('App rendering tests', () => {
     it('app renders without crashing', () => {
