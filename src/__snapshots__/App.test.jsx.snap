@@ -2,7 +2,7 @@
 
 exports[`App rendering tests renders consistently 1`] = `
 <div
-  className="App"
+  className="app"
 >
   <h5>
     Welcome to Authors Haven

@@ -1,18 +1,20 @@
+@import '~semantic-ui-css/semantic.min.css';
+@import 'Articles';
 @import url('https://fonts.googleapis.com/css?family=Nunito');
 
 body {
-	margin: 0;
-	padding: 0;
-	font-family: 'Nunito', sans-serif !important;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+  font-family: 'Nunito', sans-serif !important;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+  padding: 0;
 }
 
 code {
-	font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
 		monospace;
 }
 
 .is-active {
-	font-weight: bold;
+  font-weight: bold;
 }

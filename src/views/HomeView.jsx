@@ -1,9 +1,10 @@
 import React from 'react';
-import AppContainer from "../containers/AppContainer";
+import ArticlesListContainer from "../containers/Articles/ArticleListContainer";
+
 
 const HomeView = () => (
     <div>
-        <AppContainer />
+        <ArticlesListContainer title="Recent Articles" paginating={false} />
     </div>
 );
 
