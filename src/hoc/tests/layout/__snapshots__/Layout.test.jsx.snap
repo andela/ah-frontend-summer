@@ -3,6 +3,9 @@
 exports[`Layout tests render component without failing 1`] = `
 <div>
   <Connect(Navbar) />
+  <div
+    className="content-wrapper"
+  />
   <Footer />
 </div>
 `;

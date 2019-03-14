@@ -1,5 +1,4 @@
 import { combineReducers } from 'redux';
-
 import navBarReducer from './navBarReducer';
 import authReducer from './auth';
 import articlesReducer from "./ArticlesReducer";

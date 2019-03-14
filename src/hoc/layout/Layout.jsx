@@ -10,7 +10,9 @@ class Layout extends Component {
         return (
             <div>
                 <Navbar />
-                {children}
+                <div className="content-wrapper">
+                    {children}
+                </div>
                 <Footer />
             </div>
         );
