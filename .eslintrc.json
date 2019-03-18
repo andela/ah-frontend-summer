@@ -75,5 +75,6 @@
     "window": true,
     "Atomics": "readonly",
     "SharedArrayBuffer": "readonly"
-  }
+  },
+  "parser": "babel-eslint"
 }

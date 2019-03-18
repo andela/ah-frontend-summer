@@ -1,26 +1,33 @@
 import React from "react";
 import { mount } from "enzyme";
+import { BrowserRouter } from 'react-router-dom';
 import Login from "../Login";
 
 describe("Login", () => {
     const onChangeHandlerMock = jest.fn();
     const onSubmitHandlerMock = jest.fn();
+    const responseFacebookMock = jest.fn();
+    const responseGoogleMock = jest.fn();
     const onBlurHandlerMock = jest.fn();
+    
     const loginProps = {
         onChangeHandler: onChangeHandlerMock,
-        loginError: "hahhjjke",
+        loginError: "whsdhfish",
         onSubmitHandler: onSubmitHandlerMock,
         email: "",
         password: "",
         onDismissHandler: jest.fn(),
+        loading: false,
+        responseFacebook: responseFacebookMock,
+        responseGoogle: responseGoogleMock,
         onBlurHandler: onBlurHandlerMock,
-        loading: false
+        isEmailValid: true
     };
-    const login = mount(<Login {...loginProps} />);
+    const login = mount(<BrowserRouter><Login {...loginProps} /></BrowserRouter>);
 
     it("renders login component correctly", () => {
         expect(login).toMatchSnapshot();
-    })
+    });
 
     it("calls onChandeHandler when the email or password input is changed", () => {
         login.find('input[name="email"]').simulate("change");
@@ -37,4 +44,5 @@ describe("Login", () => {
         login.find("form").simulate("submit");
         expect(onSubmitHandlerMock).toHaveBeenCalled();
     });
+
 });

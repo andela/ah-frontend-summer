@@ -1,6 +1,10 @@
 import React from "react";
 import PropTypes from 'prop-types';
 import { Form, Grid, Segment, Message, Divider, Header } from "semantic-ui-react";
+import GoogleLogin from "react-google-login";
+import FacebookLogin from "react-facebook-login";
+import { NavLink } from 'react-router-dom'
+import config from "../config";
 import classes from "../styles/login.module.css";
 import '../styles/login.css';
 
@@ -15,7 +19,10 @@ const Login = props => {
         onChangeHandler,
         loading,
         onBlurHandler,
-        isEmailValid
+        isEmailValid,
+        responseFacebook,
+        responseGoogle,
+        onFailure
     } = props;
 
     const loginErorMsg = (
@@ -71,8 +78,33 @@ const Login = props => {
                         </Form>
                         <Divider horizontal>Or</Divider>
                         <br />
+                        <div className={classes.divide}>
+                            <center>
+                                <GoogleLogin
+                                    className={classes.googleButton}
+                                    clientId={config.GOOGLE_CLIENT_ID}
+                                    onSuccess={responseGoogle}
+                                    onFailure={onFailure}
+                                />
+                                <br />
+                                <br />
+
+                                <FacebookLogin
+                                    appId={config.FACEBOOK_CLIENT_ID}
+                                    autoLoad={false}
+                                    fields="name,email,picture"
+                                    cssClass={classes.faceBookButton}
+                                    callback={responseFacebook}
+                                />
+                            </center>
+                        </div>
+                        <br />
+                        <Divider horizontal>Or</Divider>
+
                         <div className="spaceComponents">
-                            <Header style={{ color: "#008080" }} textAlign='center' padded="very">Sign up</Header>
+                            <NavLink to="/signup">
+                                <Header style={{ color: "#008080" }} textAlign="center" padded="very">Sign up</Header>
+                            </NavLink>
                         </div>
 
                     </Segment>
@@ -90,7 +122,10 @@ Login.propTypes = {
     onSubmitHandler: PropTypes.func.isRequired,
     onChangeHandler: PropTypes.func.isRequired,
     loading: PropTypes.bool.isRequired,
-    onBlurHandler: PropTypes.func.isRequired
+    onBlurHandler: PropTypes.func.isRequired,
+    responseFacebook: PropTypes.func.isRequired,
+    responseGoogle: PropTypes.func.isRequired,
+    isEmailValid: PropTypes.bool.isRequired
 };
 
 export default Login;

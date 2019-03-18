@@ -1,16 +1,24 @@
 import React from "react";
 import { shallow } from "enzyme";
-import { LoginView } from "../LoginView";
+import { LoginView, mapDispatchToProps } from "../LoginView";
 
 describe("login view", () => {
     const mockLoginFetch = jest.fn();
     const mockRemoveLoginError = jest.fn();
+    const mockFacebookLogin = jest.fn();
+    const mockGoogleLogin = jest.fn();
+    const dispatch = jest.fn();
+
     const loginViewProps = {
         login: mockLoginFetch,
         dismissLoginError: mockRemoveLoginError,
         loginError: "",
-        loading: false
+        loading: false,
+        facebookLogin: mockFacebookLogin,
+        googleLogin: mockGoogleLogin,
+        history: {}
     };
+
     const loginView = shallow(<LoginView {...loginViewProps} />);
     const loginViewInstance = loginView.instance();
 
@@ -44,5 +52,19 @@ describe("login view", () => {
     it("onDismissHandler dispatches removeLoginError action creator to remove login error message", () => {
         loginViewInstance.onDismissHandler();
         expect(mockRemoveLoginError).toHaveBeenCalled();
+    });
+    it("responseFacebook dispatches loginFetch action creator when called", () => {
+        loginViewInstance.responseFacebook({ accessToken: 'jjajisi3' });
+        expect(mockFacebookLogin).toHaveBeenCalled();
+    });
+    it("responseGoogle dispatches loginFetch action creator when called", () => {
+        loginViewInstance.responseGoogle({ tokenId: 'jjajisi3' });
+        expect(mockGoogleLogin).toHaveBeenCalled();
+    });
+    
+    it("should map dispatch to props", () => {
+        mapDispatchToProps(dispatch).facebookLogin();
+        mapDispatchToProps(dispatch).googleLogin();
+        expect(dispatch.mock.calls.length).toBe(2);
     });
 });

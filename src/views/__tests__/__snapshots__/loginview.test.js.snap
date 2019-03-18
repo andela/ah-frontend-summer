@@ -11,5 +11,7 @@ exports[`login view renders loginView component correctly 1`] = `
   onDismissHandler={[Function]}
   onSubmitHandler={[Function]}
   password=""
+  responseFacebook={[Function]}
+  responseGoogle={[Function]}
 />
 `;

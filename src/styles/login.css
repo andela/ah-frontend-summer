@@ -14,3 +14,6 @@
     width: 25%;
     height: 40px;
 }
+.ui.column.grid{
+    margin-right: 100px !important;
+}

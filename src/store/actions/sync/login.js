@@ -26,5 +26,5 @@ export const removeLoginError = () => {
 export const loginStarted = () => {
     return {
         type: LOGIN_STARTED
-    }
-}
+    };
+};

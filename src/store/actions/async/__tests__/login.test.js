@@ -4,6 +4,7 @@ import thunk from "redux-thunk";
 import loginFetch from "../login";
 import { LOGIN_USER, FAILED_LOGIN_USER } from "../../sync/login";
 
+
 jest.mock("axios");
 
 describe("login async actions", () => {

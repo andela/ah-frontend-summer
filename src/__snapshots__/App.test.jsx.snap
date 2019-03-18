@@ -22,7 +22,7 @@ exports[`App rendering tests renders without crashing 1`] = `
         component={[Function]}
         path="/signup"
       />
-      <Layout>
+      <Connect(Layout)>
         <Route
           component={[Function]}
           exact={true}
@@ -42,7 +42,7 @@ exports[`App rendering tests renders without crashing 1`] = `
           exact={true}
           path="/email-verification/:token"
         />
-      </Layout>
+      </Connect(Layout)>
     </Switch>
   </div>
 </BrowserRouter>
@@ -60,7 +60,7 @@ exports[`App rendering tests renders without crashing 2`] = `
         component={[Function]}
         path="/signup"
       />
-      <Layout>
+      <Connect(Layout)>
         <Route
           component={[Function]}
           exact={true}
@@ -80,7 +80,7 @@ exports[`App rendering tests renders without crashing 2`] = `
           exact={true}
           path="/email-verification/:token"
         />
-      </Layout>
+      </Connect(Layout)>
     </Switch>
   </div>
 </BrowserRouter>
