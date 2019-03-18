@@ -1,8 +1,10 @@
 import { LOGIN_USER, FAILED_LOGIN_USER, REMOVE_LOGIN_ERROR, LOGIN_STARTED } from "../actions/sync/login";
 
 const initialState = {
-    loading: false,
+    token: null,
     loginError: "",
+    loading: false,
+    error: null
 };
 
 const loginReducer = (state = initialState, action) => {
@@ -11,18 +13,22 @@ const loginReducer = (state = initialState, action) => {
         return {
             ...state,
             loading: true
-        }
+        };
     case LOGIN_USER:
         return {
             ...state,
             loading: false,
-            loginError: ""
+            loginError: "",
+            token: action.userData.user.token,
+            error: null
         };
     case FAILED_LOGIN_USER:
         return {
             ...state,
             loading: false,
-            loginError: action.errorMsg
+            loginError: action.errorMsg,
+            token: null,
+            error: action.error
         };
     case REMOVE_LOGIN_ERROR:
         return {

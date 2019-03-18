@@ -11,13 +11,13 @@
     border-color: #dc3545;
   }
   .cardHeader {
-    font-family:'Spectral';
+    font-family: 'Nunito', sans-serif;
     font-size: 2em;
     align-items: center;
     margin: 0;
   }
   .cardDesc{
-    font-family:'Roboto';
+    font-family: 'Nunito Sans', sans-serif;
     font-size: 1.1em;
     color: #008080;
     font-style: initial;
@@ -35,4 +35,25 @@
   .spaceComponents {
     margin: 5%;
 }
-  
+  .faceBookButton{
+    background-color: #4367B2 ;
+    display: inline-flex; 
+    align-items: center;
+    align-content: center;
+    width: 33%;
+    color: white;
+    height: 40px;
+    padding: 0px; 
+    border-radius: 2px; 
+    border: 1px solid transparent; 
+    font-size: 14px; 
+    font-weight: 500; 
+    font-family: 'Nunito Sans', sans-serif;
+    text-align: center
+  }
+  .googleButton{
+    border-radius: 10px; 
+  }
+  .spaceComponents {
+      margin: 5%;
+  }

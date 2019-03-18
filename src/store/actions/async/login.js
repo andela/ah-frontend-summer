@@ -3,7 +3,7 @@ import { loginUser, failedLoginUser, loginStarted } from "../sync/login";
 
 const loginFetch = payload => {
     return async dispatch => {
-        dispatch(loginStarted())
+        dispatch(loginStarted());
         try {
             const response = await axios.post(payload.url, payload.data);
             dispatch(loginUser(response.data));
@@ -11,7 +11,10 @@ const loginFetch = payload => {
             localStorage.setItem("token", response.data.user.token);
             payload.history.push("/");
         } catch (error) {
-            const errorMsg = !error.response ? "Something went wrong. Please check your internet connection." : "Incorrect email or password.";
+            let errorMsg = "Something went wrong. Please check your internet connection.";
+            if(error.response){
+                errorMsg = !payload.isSocialLogin ? "Incorrect email or password." : "Something went wrong, please try again.";
+            }
             dispatch(failedLoginUser(errorMsg));
         }
     };

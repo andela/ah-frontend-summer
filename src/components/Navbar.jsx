@@ -30,7 +30,7 @@ export const Navbar = (props) => {
                             Tags
                         </NavLink>
                     </Menu.Item>
-                    {navBar.isLoggedIn ? (
+                    { navBar.token !== null ? (
                         <Menu.Menu position="right">
                             <NavLink to="/notifications">
                                 <Icon size="large" name="bell outline" className="bellNotification" />
@@ -62,11 +62,9 @@ export const Navbar = (props) => {
 };
 
 const mapStateToProps = (state) => {
-    return { navBar: state.navBar };
+    return { 
+        navBar: state.login };
 };
 
-Navbar.propTypes = {
-    navBar: PropTypes.object.isRequired
-};
 
 export default connect(mapStateToProps)(Navbar);

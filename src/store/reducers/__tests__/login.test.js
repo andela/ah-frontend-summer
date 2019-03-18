@@ -8,7 +8,9 @@ import {
 describe("login reducer", () => {
     const initialState = {
         loginError: "",
-        loading: false
+        loading: false,
+        "error": null, 
+        "token": "sgjfhg348y8jhsgdf"
     };
 
     it("undefined action returns initial state", () => {
@@ -27,7 +29,7 @@ describe("login reducer", () => {
         ).toBe("");
     });
 
-    it("LOGIN_USER action sets username of logged in user and token", () => {
+    it("LOGIN_USER action sets username of logged in user and isAuthenticated to true if there's a token", () => {
         expect(
             loginReducer(initialState, {
                 type: LOGIN_USER,
@@ -35,7 +37,9 @@ describe("login reducer", () => {
             })
         ).toEqual({
             loginError: "",
-            loading: false
+            loading: false,
+            "error": null, 
+            "token": "sgjfhg348y8jhsgdf"
         });
     });
 });
