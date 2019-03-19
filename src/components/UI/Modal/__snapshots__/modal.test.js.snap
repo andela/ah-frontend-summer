@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`tests Modal component should render with out crashing 1`] = `
+<Fragment>
+  <backdrop
+    clicked={[MockFunction]}
+    show={false}
+  />
+  <div
+    className="Modal"
+    style={
+      Object {
+        "opacity": "0",
+        "transform": "translateY(-100vh)",
+      }
+    }
+  />
+</Fragment>
+`;

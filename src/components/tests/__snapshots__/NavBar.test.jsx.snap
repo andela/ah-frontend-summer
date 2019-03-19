@@ -43,7 +43,7 @@ exports[`Navbar test should render Navbar with default state 1`] = `
         <NavLink
           activeClassName="active"
           aria-current="page"
-          to="/"
+          to="/tags"
         >
           Tags
         </NavLink>
@@ -124,7 +124,7 @@ exports[`Navbar test should render Navbar with logged in state 1`] = `
         <NavLink
           activeClassName="active"
           aria-current="page"
-          to="/"
+          to="/tags"
         >
           Tags
         </NavLink>

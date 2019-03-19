@@ -1,4 +1,4 @@
-import {Card, Container, Grid, Header, Image, Placeholder} from 'semantic-ui-react';
+import {Card, Container, Grid, Image, Placeholder} from 'semantic-ui-react';
 import React from 'react';
 import Thumbnail from '../../assets/images/thumbnail.jpg';
 

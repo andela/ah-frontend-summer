@@ -1,0 +1,16 @@
+.ArticleBody {
+    padding: 30px;
+    font-size: 1.2rem;
+}
+
+.SubmainContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 20px;
+    align-content: center;
+    justify-content: center
+}
+
+.actionButtons {
+    padding: 10px;
+}

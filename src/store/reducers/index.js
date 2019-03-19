@@ -3,6 +3,7 @@ import loginReducer from "./login";
 import navBarReducer from './navBarReducer';
 import authReducer from './auth';
 import articlesReducer from "./ArticlesReducer";
+import articleReducer from './article';
 
 // the parts- each of these will receive a part of the store and are responsible for returning an updated part
 // return the store itself if no changes are made
@@ -11,7 +12,8 @@ const reducerParts = {
     navBar: navBarReducer,
     auth: authReducer,
     articles: articlesReducer,
-    login: loginReducer
+    login: loginReducer,
+    article: articleReducer
 };
 
 // we combine the individual parts

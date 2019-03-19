@@ -31,7 +31,22 @@ exports[`App rendering tests renders without crashing 1`] = `
         <Route
           component={[Function]}
           exact={true}
+          path="/articles/:slug"
+        />
+        <Route
+          component={[Function]}
+          exact={true}
           path="/articles"
+        />
+        <Route
+          component={[Function]}
+          exact={true}
+          path="/articles/create"
+        />
+        <Route
+          component={[Function]}
+          exact={true}
+          path="/articles/update/:slug"
         />
         <Route
           component={[Function]}
@@ -41,6 +56,30 @@ exports[`App rendering tests renders without crashing 1`] = `
           component={[Function]}
           exact={true}
           path="/email-verification/:token"
+        />
+        <ToastContainer
+          autoClose={5000}
+          bodyClassName={null}
+          className={null}
+          closeButton={
+            <CloseButton
+              ariaLabel="close"
+            />
+          }
+          closeOnClick={true}
+          draggable={true}
+          draggablePercent={80}
+          hideProgressBar={false}
+          newestOnTop={false}
+          pauseOnFocusLoss={true}
+          pauseOnHover={true}
+          position="top-right"
+          progressClassName={null}
+          progressStyle={null}
+          rtl={false}
+          style={null}
+          toastClassName={null}
+          transition={[Function]}
         />
       </Connect(Layout)>
     </Switch>
@@ -69,7 +108,22 @@ exports[`App rendering tests renders without crashing 2`] = `
         <Route
           component={[Function]}
           exact={true}
+          path="/articles/:slug"
+        />
+        <Route
+          component={[Function]}
+          exact={true}
           path="/articles"
+        />
+        <Route
+          component={[Function]}
+          exact={true}
+          path="/articles/create"
+        />
+        <Route
+          component={[Function]}
+          exact={true}
+          path="/articles/update/:slug"
         />
         <Route
           component={[Function]}
@@ -79,6 +133,30 @@ exports[`App rendering tests renders without crashing 2`] = `
           component={[Function]}
           exact={true}
           path="/email-verification/:token"
+        />
+        <ToastContainer
+          autoClose={5000}
+          bodyClassName={null}
+          className={null}
+          closeButton={
+            <CloseButton
+              ariaLabel="close"
+            />
+          }
+          closeOnClick={true}
+          draggable={true}
+          draggablePercent={80}
+          hideProgressBar={false}
+          newestOnTop={false}
+          pauseOnFocusLoss={true}
+          pauseOnHover={true}
+          position="top-right"
+          progressClassName={null}
+          progressStyle={null}
+          rtl={false}
+          style={null}
+          toastClassName={null}
+          transition={[Function]}
         />
       </Connect(Layout)>
     </Switch>
