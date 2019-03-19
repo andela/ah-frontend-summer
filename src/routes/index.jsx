@@ -21,10 +21,12 @@ const Routes = () => (
                 <Route path="/signup" component={SignupView} />
                 <Layout>
                     <Route path="/" exact component={HomeView} />
-                    <Route path="/articles/:slug" exact component={Article} />
-                    <Route path="/articles" exact component={ArticlesView} />
-                    <Route path="/articles/create" exact component={CreateArticle} />
-                    <Route path="/articles/update/:slug" exact component={UpdateArticle} />
+                    <Switch>
+                        <Route path="/articles" exact component={ArticlesView} />
+                        <Route path="/articles/create" exact component={CreateArticle} />
+                        <Route path="/articles/update/:slug" exact component={UpdateArticle} />
+                        <Route path="/articles/:slug" component={Article} />
+                    </Switch>
                     <Route path="/tags" component={CreateArticle} />
                     <Route path="/email-verification/:token" exact component={EmailVerificationView} />
                     <ToastContainer />

@@ -1,9 +1,11 @@
 @import '~semantic-ui-css/semantic.min.css';
 @import 'Articles';
 @import 'Banner';
+@import 'Comments';
 @import url('../assets/fonts/nunito/font.css');
 
 body,
+.nunito,
 .ui {
   font-family: 'Nunito', sans-serif !important;
   -moz-osx-font-smoothing: grayscale;

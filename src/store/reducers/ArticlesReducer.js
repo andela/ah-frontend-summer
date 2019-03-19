@@ -6,13 +6,12 @@ export const defaultState = {
     articleCount: null,
     nextPage: null,
     prevPage: null,
-    status: "succeeded",
+    status: SUCCEEDED,
     loading: false,
     errors: ""
 };
 
 const articlesReducer = (state=defaultState, action) => {
-
     if (typeof action === 'undefined'){
         return state;
     }

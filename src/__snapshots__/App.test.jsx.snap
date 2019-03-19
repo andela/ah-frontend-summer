@@ -28,26 +28,27 @@ exports[`App rendering tests renders without crashing 1`] = `
           exact={true}
           path="/"
         />
-        <Route
-          component={[Function]}
-          exact={true}
-          path="/articles/:slug"
-        />
-        <Route
-          component={[Function]}
-          exact={true}
-          path="/articles"
-        />
-        <Route
-          component={[Function]}
-          exact={true}
-          path="/articles/create"
-        />
-        <Route
-          component={[Function]}
-          exact={true}
-          path="/articles/update/:slug"
-        />
+        <Switch>
+          <Route
+            component={[Function]}
+            exact={true}
+            path="/articles"
+          />
+          <Route
+            component={[Function]}
+            exact={true}
+            path="/articles/create"
+          />
+          <Route
+            component={[Function]}
+            exact={true}
+            path="/articles/update/:slug"
+          />
+          <Route
+            component={[Function]}
+            path="/articles/:slug"
+          />
+        </Switch>
         <Route
           component={[Function]}
           path="/tags"
@@ -105,26 +106,27 @@ exports[`App rendering tests renders without crashing 2`] = `
           exact={true}
           path="/"
         />
-        <Route
-          component={[Function]}
-          exact={true}
-          path="/articles/:slug"
-        />
-        <Route
-          component={[Function]}
-          exact={true}
-          path="/articles"
-        />
-        <Route
-          component={[Function]}
-          exact={true}
-          path="/articles/create"
-        />
-        <Route
-          component={[Function]}
-          exact={true}
-          path="/articles/update/:slug"
-        />
+        <Switch>
+          <Route
+            component={[Function]}
+            exact={true}
+            path="/articles"
+          />
+          <Route
+            component={[Function]}
+            exact={true}
+            path="/articles/create"
+          />
+          <Route
+            component={[Function]}
+            exact={true}
+            path="/articles/update/:slug"
+          />
+          <Route
+            component={[Function]}
+            path="/articles/:slug"
+          />
+        </Switch>
         <Route
           component={[Function]}
           path="/tags"

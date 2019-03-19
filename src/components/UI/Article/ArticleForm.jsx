@@ -13,6 +13,21 @@ import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import '../../../assets/styles/CreateArticleForm.scss';
 import '../../../assets/styles/SignupForm.scss';
 
+const editorConfig = {
+    toolbar: [
+        'bold',
+        'italic',
+        '|',
+        'bulletedList',
+        'numberedList',
+        'blockQuote',
+        '|',
+        'undo',
+        'redo'
+    ],
+    placeholder: 'Create your Article...'
+};
+
 const articleForm = (props) => {
     const {
         formTitle,
@@ -61,6 +76,7 @@ const articleForm = (props) => {
                                 </Label>
                                 <CKEditor
                                     editor={ ClassicEditor }
+                                    config={editorConfig}
                                     data={props.body}
                                     onChange={props.bodyChanged}
                                     name="boddyEditor"

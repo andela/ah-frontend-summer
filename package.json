@@ -31,7 +31,7 @@
   "scripts": {
     "start": "HTTPS=true react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test -u --verbose",
     "eject": "react-scripts eject",
     "coverage": "react-scripts test -u --env=jsdom --coverage --coveragePathIgnorePatterns=src/index.jsx --coveragePathIgnorePatterns=src/serviceWorker.js"
   },

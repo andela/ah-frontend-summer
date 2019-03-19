@@ -1,0 +1,65 @@
+$teal: #008080;
+$black: #000000;
+
+.comment-list-no-comments,
+.reply-list-no-replies {
+  font-style: italic;
+  font-weight: bold;
+  text-align: center;
+}
+
+.ui.header.comment-teal {
+  color: $teal;
+}
+
+.avatar.comment-avatar {
+  margin: 0 5px 0 0 !important;
+}
+
+.ui.comments .comment .text.comment-text {
+  font-size: 1.3em;
+}
+
+.avatar.reply-avatar {
+  margin: 0 5px 0 0 !important;
+}
+
+.ui.comments.comment-list{
+  margin: auto;
+}
+
+.ui.comments .comment .metadata{
+  margin-left: 0;
+}
+
+.ck{
+  border: 0 !important;
+}
+
+.ck.ck-icon.ck-button__icon{
+  color: $teal;
+}
+
+.comment-new-comment-buttons{
+  text-align: right;
+}
+
+.comment-text .disabled .ck-toolbar,
+.reply-text .disabled .ck-toolbar {
+  height: 0;
+  visibility: hidden;
+}
+
+.ui.comments .comment .actions .comment-separator {
+  color: $black;
+  cursor: default;
+}
+
+.ui.comments .comment .actions .danger {
+  color: darkred;
+  cursor: pointer;
+}
+
+.center{
+  text-align: center;
+}

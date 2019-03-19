@@ -58,7 +58,22 @@ exports[`<ArticleForm /> ArticleForm will render without crashing 1`] = `
             Body
           </Label>
           <t
-            config={Object {}}
+            config={
+              Object {
+                "placeholder": "Create your Article...",
+                "toolbar": Array [
+                  "bold",
+                  "italic",
+                  "|",
+                  "bulletedList",
+                  "numberedList",
+                  "blockQuote",
+                  "|",
+                  "undo",
+                  "redo",
+                ],
+              }
+            }
             editor={[Function]}
             name="boddyEditor"
           />
