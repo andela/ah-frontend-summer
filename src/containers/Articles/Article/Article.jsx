@@ -9,6 +9,7 @@ import DeleteArticleButtons from "../../../components/UI/Article/DeleteArticle";
 import Loader from "../../../components/UI/Loader";
 import {dangerToast, infoToast } from "../../../components/Toast/toast";
 import Modal from "../../../components/UI/Modal/Modal";
+import CommentListContainer from "../../Comments/CommentListContainer";
 
 export class Article extends Component {
 
@@ -84,6 +85,7 @@ export class Article extends Component {
                 show={this.state.showModal}
                 modalClosed={this.closeModalHandler}>{this.confirmButtons}</Modal>
                 {this.renderArticle}
+                <CommentListContainer slug={this.props.match.params.slug} />
             </div>
         );
     }

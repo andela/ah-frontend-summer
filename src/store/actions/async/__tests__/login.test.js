@@ -15,7 +15,7 @@ describe("login async actions", () => {
     it("dispatches loginUser action creator on successful login", () => {
         axios.post.mockResolvedValue({ data: {user:{ username: "oma0256", "token": "sdbfh"}} });
         return store
-            .dispatch(loginFetch({ history: { push: mockPushMethod } }))
+            .dispatch(loginFetch({ history: { goBack: mockPushMethod } }))
             .then(() => {
                 expect(store.getActions()).toEqual([
                     {"type": "LOGIN_STARTED"}, { userData: {user:{ username: "oma0256", "token": "sdbfh"}}, type: LOGIN_USER }

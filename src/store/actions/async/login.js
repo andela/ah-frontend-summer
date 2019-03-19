@@ -9,7 +9,7 @@ const loginFetch = payload => {
             dispatch(loginUser(response.data));
             localStorage.setItem("username", response.data.user.username);
             localStorage.setItem("token", response.data.user.token);
-            payload.history.push("/");
+            payload.history.goBack();
         } catch (error) {
             let errorMsg = "Something went wrong. Please check your internet connection.";
             if(error.response){

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import {Container} from "semantic-ui-react";
 import ArticleList from '../../components/article/ArticleList';
 import { fetchArticlesAction } from '../../store/actions/async/ArticleActions';
 import ArticleLoading from "../../components/article/ArticleLoading";
@@ -23,7 +24,7 @@ export class ArticleListContainer extends Component {
     };
     render() {
         const { loading, status } = this.props;
-        let toRender = '';
+        let toRender;
 
         if (loading){
             toRender = <ArticleLoading />;
@@ -34,10 +35,14 @@ export class ArticleListContainer extends Component {
         else if(status === SUCCEEDED){
             toRender= <ArticleList {...this.props} />;
         }
+        else{
+            toRender = 'Could not load Articles';
+        }
+
         return (
-            <div>
+            <Container>
                 {toRender}
-            </div>
+            </Container>
         );
     }
 }
