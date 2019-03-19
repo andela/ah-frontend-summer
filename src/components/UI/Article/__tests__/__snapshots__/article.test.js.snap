@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Article /> Article will render without crashing 1`] = `
+<div>
+  <Container>
+    <Header
+      as="h1"
+      padded="very"
+    />
+  </Container>
+  <Container>
+    <Container>
+       
+      <p />
+    </Container>
+  </Container>
+  <Container
+    textAlign="justified"
+  >
+    <Image
+      as="img"
+      src="https://images.pexels.com/photos/1591057/pexels-photo-1591057.jpeg?cs=srgb&dl=buttons-characters-concept-1591057.jpg&fm=jpg"
+      ui={true}
+    />
+    <div
+      className="ArticleBody"
+    >
+      body
+    </div>
+  </Container>
+</div>
+`;

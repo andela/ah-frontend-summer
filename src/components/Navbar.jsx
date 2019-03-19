@@ -2,7 +2,6 @@
 import React from "react";
 import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
-import PropTypes from 'prop-types';
 import { Menu, Button, Image, Icon } from "semantic-ui-react";
 import "../styles/navbar.css";
 import branding from '../assets/images/branding.png';
@@ -26,7 +25,7 @@ export const Navbar = (props) => {
                         </NavLink>
                     </Menu.Item>
                     <Menu.Item name="tags" className="navItems">
-                        <NavLink to="/">
+                        <NavLink to="/tags">
                             Tags
                         </NavLink>
                     </Menu.Item>

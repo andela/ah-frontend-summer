@@ -1,4 +1,4 @@
-import {Button, Container, Header, Icon, Message} from "semantic-ui-react";
+import {Button, Container, Header, Icon} from "semantic-ui-react";
 import PropTypes from 'prop-types';
 import React from 'react';
 

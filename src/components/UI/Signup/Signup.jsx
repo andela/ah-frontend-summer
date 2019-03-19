@@ -2,7 +2,7 @@ import React from 'react';
 import { Form, Grid, Segment, Button, Header, Divider, Message } from 'semantic-ui-react';
 import { NavLink } from 'react-router-dom'
 
-import '../../../assets/styles/SignupForm.css';
+import '../../../assets/styles/SignupForm.scss';
 
 const signup = (props) => {
     return (
@@ -73,8 +73,6 @@ const signup = (props) => {
                                         size="big"
                                         centered
                                         disabled={props.disabled}
-                                        onClick={props.onSubmit}
-                                        loading={props.loading}
                                         onClick={props.submitData}
                                         className="SignupBtn">
                                         Signup

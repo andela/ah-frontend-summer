@@ -7,5 +7,10 @@
 export {
 	registerUser,
 	verifyUserAccount
-}
-from './auth';
+} from './auth';
+export {
+	getArticle,
+	deleteArticle,
+	createArticle,
+	updateArticle
+} from './article';

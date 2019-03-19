@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import SignupForm from '../../components/UI/Signup/Signup';
 import * as actions from '../../store/actions/index';
-import '../../assets/styles/Signup.css';
+import '../../assets/styles/Signup.scss';
 
 export class Signup extends Component {
 

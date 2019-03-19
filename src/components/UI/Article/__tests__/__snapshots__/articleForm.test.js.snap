@@ -1,0 +1,92 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ArticleForm /> ArticleForm will render without crashing 1`] = `
+<div
+  className="CreateArticleForm"
+>
+  <Container>
+    <Segment
+      padded="very"
+    >
+      <Header
+        as="h2"
+        color="teal"
+        textAlign="center"
+      />
+      <Form
+        as="form"
+        padded="very"
+      >
+        <div
+          className="spaceComponents"
+        >
+          <Label
+            as="a"
+            color="teal"
+            ribbon={true}
+          >
+            Title
+          </Label>
+          <FormInput
+            as={[Function]}
+            control={[Function]}
+            fluid={true}
+            name="title"
+            required={true}
+            size="large"
+          />
+          <Label
+            as="a"
+            color="teal"
+            ribbon={true}
+          >
+            Description
+          </Label>
+          <FormInput
+            as={[Function]}
+            control={[Function]}
+            fluid={true}
+            name="description"
+            required={true}
+            size="large"
+          />
+          <Label
+            as="a"
+            color="teal"
+            ribbon={true}
+          >
+            Body
+          </Label>
+          <t
+            config={Object {}}
+            editor={[Function]}
+            name="boddyEditor"
+          />
+          <Label
+            as="a"
+            color="teal"
+            ribbon={true}
+          >
+            Image
+          </Label>
+          <div
+            className="ImageInputField"
+          >
+            <input
+              id="single"
+              type="file"
+            />
+          </div>
+          <Button
+            as="button"
+            basic={true}
+            color="teal"
+            fluid={true}
+            size="huge"
+          />
+        </div>
+      </Form>
+    </Segment>
+  </Container>
+</div>
+`;
