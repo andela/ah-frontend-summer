@@ -7,9 +7,10 @@ import * as actions from "../../../store/actions/index";
 import ArticleDetails from "../../../components/UI/Article/Article";
 import DeleteArticleButtons from "../../../components/UI/Article/DeleteArticle";
 import Loader from "../../../components/UI/Loader";
-import {dangerToast, infoToast } from "../../../components/Toast/toast";
+import { dangerToast, infoToast } from "../../../components/Toast/toast";
 import Modal from "../../../components/UI/Modal/Modal";
 import CommentListContainer from "../../Comments/CommentListContainer";
+import RatingContainer from './RatingContainer';
 
 export class Article extends Component {
 
@@ -17,7 +18,7 @@ export class Article extends Component {
         showModal: false
     }
 
-    componentWillMount(){
+    componentWillMount() {
         this.props.onGetArticle(this.props.match.params.slug);
     }
 
@@ -35,7 +36,7 @@ export class Article extends Component {
     }
 
     render() {
-        this.renderArticle = ( <Loader /> );
+        this.renderArticle = (<Loader />);
         this.created_at = null;
         this.isAuthor = false;
         this.isAuthenticated = localStorage.getItem("token") !== null;
@@ -46,16 +47,16 @@ export class Article extends Component {
             this.confirmButtons = (
                 <DeleteArticleButtons
                     dismissModal={this.closeModalHandler}
-                    deleteArticle={this.deleteArticleHandeler}/>
+                    deleteArticle={this.deleteArticleHandeler} />
             );
         };
 
-        if ( article && article.article === "Article has been deleted") {
+        if (article && article.article === "Article has been deleted") {
             infoToast(article.article);
-            this.renderArticle = (<Redirect to="/"/>);
+            this.renderArticle = (<Redirect to="/" />);
         } else if (article) {
             if (this.username) {
-                this.isAuthor = ( this.username ===
+                this.isAuthor = (this.username ===
                     article.author.username
                     && this.isAuthenticated)
             };
@@ -73,18 +74,20 @@ export class Article extends Component {
                     dateCreated={this.created_at}
                     isAuthor={this.isAuthor}
                     image={article.image}
-                    />);
-        } else if ( error ) {
+                />
+            );
+        } else if (error) {
             dangerToast(error.articles.errors);
-            this.renderArticle = (<Redirect to="/"/>);
+            this.renderArticle = (<Redirect to="/" />);
         };
 
         return (
             <div>
                 <Modal
-                show={this.state.showModal}
-                modalClosed={this.closeModalHandler}>{this.confirmButtons}</Modal>
+                    show={this.state.showModal}
+                    modalClosed={this.closeModalHandler}>{this.confirmButtons}</Modal>
                 {this.renderArticle}
+                <RatingContainer {...this.props} />
                 <CommentListContainer slug={this.props.match.params.slug} />
             </div>
         );

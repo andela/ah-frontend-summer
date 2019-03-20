@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Form, Grid, Segment, Message, Divider, Header } from "semantic-ui-react";
 import GoogleLogin from "react-google-login";
 import FacebookLogin from "react-facebook-login";
-import { NavLink } from 'react-router-dom'
+import { NavLink } from 'react-router-dom';
 import config from "../config";
 import classes from "../styles/login.module.css";
 import '../styles/login.css';
@@ -30,7 +30,7 @@ const Login = props => {
             negative
             content={loginError}
             onDismiss={onDismissHandler}
-            style={{ width: '50%', margin: 'auto' }}
+            style={{ width: "50%", margin: "auto" }}
         />
     );
     const emailInvalidError = <div style={{ color: "red" }}>Please enter a valid email</div>;
@@ -44,8 +44,8 @@ const Login = props => {
                 >
                     <Segment padded="very" color="green">
 
-                        <Header as='h1' textAlign='center' padded="very">Author's Haven</Header>
-                        <Header as='h6' style={{ color: "#008080", marginTop: "5px", textAlign: 'center', fontSize: "1em" }}>A home for the creative at heart</Header>
+                        <Header as="h1" textAlign="center" padded="very">Author&apos;s Haven</Header>
+                        <Header as="h6" style={{ color: "#008080", marginTop: "5px", textAlign: "center", fontSize: "1em" }}>A home for the creative at heart</Header>
 
                         <br />
                         {loginError ? loginErorMsg : null}
@@ -53,7 +53,7 @@ const Login = props => {
                             <center>
                                 <Form.Field>
                                     <input
-                                        style={!isEmailValid ? { borderColor: "red", width: '50%' } : { width: '50%' }}
+                                        style={!isEmailValid ? { borderColor: "red", width: "50%" } : { width: "50%" }}
                                         type="text"
                                         placeholder="Email"
                                         name="email"
@@ -70,7 +70,7 @@ const Login = props => {
                                         name="password"
                                         value={password}
                                         onChange={onChangeHandler}
-                                        style={{ width: '50%' }}
+                                        style={{ width: "50%" }}
                                     />
                                 </Form.Field>
                                 <Form.Button type="submit" className="login" loading={loading}>Sign in</Form.Button>

@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`rate container should render rating component correctly 1`] = `
+<div>
+  <Rating
+    averageRating={0}
+    onStarClick={[Function]}
+    rateScore={0}
+  />
+</div>
+`;

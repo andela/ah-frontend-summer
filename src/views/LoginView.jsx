@@ -113,7 +113,7 @@ export const mapDispatchToProps = dispatch => {
         dismissLoginError: () => dispatch(removeLoginError())
     };
 };
-const mapStateToProps = state => {
+export const mapStateToProps = state => {
     return {
         loginError: state.login.loginError,
         loading: state.login.loading

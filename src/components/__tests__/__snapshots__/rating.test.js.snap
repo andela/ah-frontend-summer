@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Rating should render rate component correctly 1`] = `
+<Rating
+  averageRating={4}
+  onStarClick={[MockFunction]}
+  rateScore={4}
+>
+  <div>
+    <Container
+      textAlign="right"
+    >
+      <div
+        className="ui right aligned container"
+      >
+        <span>
+          Average Rates:
+          4
+        </span>
+      </div>
+    </Container>
+  </div>
+</Rating>
+`;

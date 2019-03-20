@@ -6,6 +6,7 @@ describe("Article reducer", () => {
     it("should return initial state if no action", () => {
         expect(articleReducer(undefined, {})).toEqual({
             article: null,
+            averageRating: null,
             error: null,
             loading: false,
             message: ""
@@ -15,6 +16,7 @@ describe("Article reducer", () => {
     it("should return updated state of loading true is action in started", () => {
         expect(articleReducer(undefined, { type: actionTypes.GET_ARTICLE_START })).toEqual({
             article: null,
+            averageRating: null,
             error: null,
             loading: true,
             message: ""
@@ -27,9 +29,11 @@ describe("Article reducer", () => {
             error: "article loading"
         })).toEqual({
             article: null,
+            averageRating: null,
             error: "article loading",
             loading: false,
-            message: ""
+            message: "",
+            
         });
     });
 
@@ -51,6 +55,7 @@ describe("Article reducer", () => {
             data: { articles: "updated successfully" }
         })).toEqual({
             article: "updated successfully",
+            averageRating: null,
             error: null,
             loading: false,
             message: "Changes saved succefully"
@@ -63,6 +68,7 @@ describe("Article reducer", () => {
             error: "failed updating"
         })).toEqual({
             article: null,
+            averageRating: null,
             error: "failed updating",
             loading: false,
             message: ""
@@ -75,6 +81,7 @@ describe("Article reducer", () => {
             data: { articles: "Article created" }
         })).toEqual({
             article: "Article created",
+            averageRating: null,
             error: null,
             loading: false,
             message: "Article created successfully"
@@ -87,6 +94,7 @@ describe("Article reducer", () => {
             error: "failed creating an article"
         })).toEqual({
             article: null,
+            averageRating:null,
             error: "failed creating an article",
             loading: false,
             message: ""
@@ -97,16 +105,18 @@ describe("Article reducer", () => {
         expect(articleReducer(undefined, {
             type: actionTypes.DELETE_ARTICLE,
             data:  {articles: "deleted"} })).toEqual({
-                article: "deleted",
-                error: null,
-                loading: false,
-                message: ""
+            article: "deleted",
+            averageRating:null,
+            error: null,
+            loading: false,
+            message: ""
         });
     });
 
     it("should return initial state if is action ended", () => {
         expect(articleReducer(undefined, {type: actionTypes.ACTION_ENDED})).toEqual({
             article: null,
+            averageRating: null,
             error: null,
             loading: false,
             message: ""
