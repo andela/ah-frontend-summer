@@ -6,6 +6,7 @@ import articlesReducer from "./ArticlesReducer";
 import articleReducer from './article';
 import {commentsReducer,repliesReducer} from "./CommentsReducer";
 import rateReducer from './rate';
+import passwordResetReducer from './passwordResetReducer';
 
 // the parts- each of these will receive a part of the store and are responsible for returning an updated part
 // return the store itself if no changes are made
@@ -18,7 +19,8 @@ const reducerParts = {
     article: articleReducer,
     comments: commentsReducer,
     replies: repliesReducer,
-    rate: rateReducer
+    rate: rateReducer,
+    passwordReset: passwordResetReducer
 };
 
 // we combine the individual parts

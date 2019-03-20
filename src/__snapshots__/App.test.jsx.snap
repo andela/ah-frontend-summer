@@ -22,6 +22,14 @@ exports[`App rendering tests renders without crashing 1`] = `
         component={[Function]}
         path="/signup"
       />
+      <Route
+        component={[Function]}
+        path="/forgot-password"
+      />
+      <Route
+        component={[Function]}
+        path="/reset-password/:token"
+      />
       <Connect(Layout)>
         <Route
           component={[Function]}
@@ -99,6 +107,14 @@ exports[`App rendering tests renders without crashing 2`] = `
       <Route
         component={[Function]}
         path="/signup"
+      />
+      <Route
+        component={[Function]}
+        path="/forgot-password"
+      />
+      <Route
+        component={[Function]}
+        path="/reset-password/:token"
       />
       <Connect(Layout)>
         <Route

@@ -6,7 +6,7 @@
     display: grid;
     align-items: center;
   }
-  
+
   .InvalidInput {
     border-color: #dc3545;
   }
@@ -34,25 +34,26 @@
   }
   .spaceComponents {
     margin: 5%;
+    text-align: 'center';
 }
   .faceBookButton{
     background-color: #4367B2 ;
-    display: inline-flex; 
+    display: inline-flex;
     align-items: center;
     align-content: center;
     width: 33%;
     color: white;
     height: 40px;
-    padding: 0px; 
-    border-radius: 2px; 
-    border: 1px solid transparent; 
-    font-size: 14px; 
-    font-weight: 500; 
+    padding: 0px;
+    border-radius: 2px;
+    border: 1px solid transparent;
+    font-size: 14px;
+    font-weight: 500;
     font-family: 'Nunito Sans', sans-serif;
     text-align: center
   }
   .googleButton{
-    border-radius: 10px; 
+    border-radius: 10px;
   }
   .spaceComponents {
       margin: 5%;

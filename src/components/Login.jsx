@@ -1,9 +1,9 @@
 import React from "react";
 import PropTypes from 'prop-types';
-import { Form, Grid, Segment, Message, Divider, Header } from "semantic-ui-react";
+import { Form, Grid, Segment, Message, Divider, Header} from "semantic-ui-react";
 import GoogleLogin from "react-google-login";
 import FacebookLogin from "react-facebook-login";
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link} from 'react-router-dom'
 import config from "../config";
 import classes from "../styles/login.module.css";
 import '../styles/login.css';
@@ -74,6 +74,7 @@ const Login = props => {
                                     />
                                 </Form.Field>
                                 <Form.Button type="submit" className="login" loading={loading}>Sign in</Form.Button>
+                                <Link to='/forgot-password'>Forgot Password?</Link>
                             </center>
                         </Form>
                         <Divider horizontal>Or</Divider>
