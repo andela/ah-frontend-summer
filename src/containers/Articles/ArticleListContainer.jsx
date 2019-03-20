@@ -12,16 +12,15 @@ export class ArticleListContainer extends Component {
     componentDidMount(){
         this.fetchArticles();
     }
-
     fetchArticles = () => {
         const { loading } = this.props;
         if (loading){
             return;
         }
+        const url = 'https://ah-backend-summer-staging.herokuapp.com/api/v1/articles';
         const { fetchArticles } = this.props;
-        fetchArticles();
+        fetchArticles(url);
     };
-
     render() {
         const { loading, status } = this.props;
         let toRender = '';
@@ -35,7 +34,6 @@ export class ArticleListContainer extends Component {
         else if(status === SUCCEEDED){
             toRender= <ArticleList {...this.props} />;
         }
-
         return (
             <div>
                 {toRender}
@@ -44,17 +42,27 @@ export class ArticleListContainer extends Component {
     }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
+    const { articles,
+        loading,
+        status,
+        articleCount,
+        nextPage,
+        prevPage
+    } = state.articles;
     return {
-        articles: state.articles.articles,
-        loading: state.articles.loading,
-        status: state.articles.status
+        articles,
+        loading,
+        status,
+        articleCount,
+        nextPage,
+        prevPage
     };
 };
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = dispatch => {
     return {
-        fetchArticles : () => dispatch(fetchArticlesAction())
+        fetchArticles : url => dispatch(fetchArticlesAction(url))
     };
 };
 

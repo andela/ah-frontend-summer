@@ -1,4 +1,3 @@
-
 const navBarReducer = (state={isLoggedIn: false}, action) => {
     switch (action.type) {
     case 'USER_LOGGEDIN':
