@@ -110,6 +110,8 @@ exports[`<Signup /> Signup will render without crashing 1`] = `
           className="spaceComponents"
         >
           <NavLink
+            activeClassName="active"
+            aria-current="page"
             to="/login"
           >
             <Header

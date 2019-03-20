@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ListPagination tests should render ListPagination correctly 1`] = `
+<Grid>
+  <GridRow
+    columns={3}
+  >
+    <GridColumn
+      width={3}
+    />
+    <GridColumn
+      st={true}
+      textAlign="center"
+      width={10}
+    >
+      <Pagination
+        activePage={1}
+        aria-label="Pagination Navigation"
+        boundaryRange={0}
+        ellipsisItem={null}
+        firstItem={null}
+        lastItem={null}
+        nextItem={
+          Object {
+            "aria-label": "Next item",
+            "content": "⟩",
+          }
+        }
+        onPageChange={[Function]}
+        pageItem={Object {}}
+        prevItem={
+          Object {
+            "aria-label": "Previous item",
+            "content": "⟨",
+          }
+        }
+        siblingRange={1}
+        totalPages={2}
+      />
+    </GridColumn>
+    <GridColumn
+      width={3}
+    />
+  </GridRow>
+</Grid>
+`;

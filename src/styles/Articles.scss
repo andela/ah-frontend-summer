@@ -53,3 +53,16 @@ $teal: #008080;
 .article-card-title {
   color: $teal;
 }
+
+/*Media queries*/
+@media (max-width: 767px) {
+  .ui.pagination.menu {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 414px) {
+  .ui.pagination.menu {
+    font-size: 0.6rem;
+  }
+}
