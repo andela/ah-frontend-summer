@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render Article View Container renders rate component correctly 1`] = `
+<div>
+  <Connect(ArticleListContainer)
+    paginating={true}
+    title="Articles"
+  />
+</div>
+`;

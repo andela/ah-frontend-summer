@@ -4,7 +4,8 @@ const initiaState = {
     article: null,
     error: null,
     loading: false,
-    message: ""
+    message: "",
+    averageRating: null
 };
 
 const articleReducer = (state = initiaState, action) => {
@@ -29,7 +30,8 @@ const articleReducer = (state = initiaState, action) => {
                 ...state,
                 loading: false,
                 article: action.data.articles,
-                error: null
+                error: null,
+                averageRating: action.data.articles.average_ratings
             };
         case actionTypes.DELETE_ARTICLE:
             return {

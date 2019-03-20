@@ -54,6 +54,10 @@ $teal: #008080;
   color: $teal;
 }
 
+.rating-stars {
+  font-size: 24px;
+}
+
 /*Media queries*/
 @media (max-width: 767px) {
   .ui.pagination.menu {

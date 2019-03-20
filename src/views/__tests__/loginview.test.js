@@ -1,6 +1,6 @@
 import React from "react";
 import { shallow } from "enzyme";
-import { LoginView, mapDispatchToProps } from "../LoginView";
+import { LoginView, mapDispatchToProps, mapStateToProps } from "../LoginView";
 
 describe("login view", () => {
     const mockLoginFetch = jest.fn();
@@ -25,7 +25,7 @@ describe("login view", () => {
     afterEach(() => {
         loginView.setState({ email: "", password: "" });
     });
- 
+
     it("renders loginView component correctly", () => {
         expect(loginView).toMatchSnapshot();
     });
@@ -61,10 +61,15 @@ describe("login view", () => {
         loginViewInstance.responseGoogle({ tokenId: 'jjajisi3' });
         expect(mockGoogleLogin).toHaveBeenCalled();
     });
-    
+
     it("should map dispatch to props", () => {
         mapDispatchToProps(dispatch).facebookLogin();
         mapDispatchToProps(dispatch).googleLogin();
         expect(dispatch.mock.calls.length).toBe(2);
+    });
+
+    it("should map state to props", () => {
+        const login = { loginError: "am an error", loading: "" };
+        expect(mapStateToProps({ login })).toEqual({ loginError: "am an error", loading: "" });
     });
 });

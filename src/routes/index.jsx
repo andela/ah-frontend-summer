@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 
-import Layout from '../hoc/layout/Layout'
+import Layout from '../hoc/layout/Layout';
 import HomeView from '../views/HomeView';
 import LoginView from '../views/LoginView';
 import SignupView from '../views/Auth/Signup';

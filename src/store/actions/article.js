@@ -54,8 +54,8 @@ export const deleteArticle = (slug) => {
         } catch (error) {
             dispatch(deleteArticleFail(error.response.data));
         }
-    }
-}
+    };
+};
 
 export const getArticle = (slug) => {
     return async (dispatch) => {
