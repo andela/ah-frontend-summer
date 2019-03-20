@@ -228,6 +228,17 @@ exports[`Login renders login component correctly 1`] = `
                               </div>
                             </FormField>
                           </FormButton>
+                          <Link
+                            replace={false}
+                            to="/forgot-password"
+                          >
+                            <a
+                              href="/forgot-password"
+                              onClick={[Function]}
+                            >
+                              Forgot Password?
+                            </a>
+                          </Link>
                         </center>
                       </form>
                     </Form>

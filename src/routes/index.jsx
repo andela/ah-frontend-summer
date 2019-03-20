@@ -6,6 +6,9 @@ import Layout from '../hoc/layout/Layout';
 import HomeView from '../views/HomeView';
 import LoginView from '../views/LoginView';
 import SignupView from '../views/Auth/Signup';
+import PasswordRequestContainer from '../containers/passwordReset/RequestPasswordReset';
+import PasswordResetContainer from '../containers/passwordReset/ResetPassword';
+
 import EmailVerificationView from '../views/Auth/verification';
 import ArticlesView from "../views/ArticlesView";
 import Article from '../containers/Articles/Article/Article';
@@ -19,6 +22,8 @@ const Routes = () => (
             <Switch>
                 <Route path="/login" component={LoginView} />
                 <Route path="/signup" component={SignupView} />
+                <Route path="/forgot-password" component={PasswordRequestContainer} />
+                <Route path="/reset-password/:token" component={PasswordResetContainer} />
                 <Layout>
                     <Route path="/" exact component={HomeView} />
                     <Switch>
