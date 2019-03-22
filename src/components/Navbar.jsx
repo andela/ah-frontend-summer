@@ -44,12 +44,12 @@ export const Navbar = ({ profile }) => {
                     </NavLink>
                 </Menu.Item>
                 <Menu.Menu position="right">
-                    <Menu.Item name="menu" className="navItems">
+                    <Menu.Item name="menu" className="navHome">
                         <NavLink to="/">
                             Home
                         </NavLink>
                     </Menu.Item>
-                    <Menu.Item name="tags" className="navItems">
+                    <Menu.Item name="tags" className="navTags">
                         <NavLink to="/tags">
                             Tags
                         </NavLink>

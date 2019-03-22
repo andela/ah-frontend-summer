@@ -2,6 +2,7 @@ import React from 'react';
 import { Container, Button, Header, Image, Icon } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 import renderHTML from 'react-render-html';
+import TagCard from '../../tags/TagCard';
 
 import '../../../assets/styles/Article.scss';
 
@@ -19,7 +20,9 @@ const article = (props) => {
         body,
         facebook,
         twitter,
-        email
+        email,
+        tags,
+        handleOnClick
     } = props;
     const renderedBody = renderHTML(body)
     const defautImage = 'https://images.pexels.com/photos/1591057/pexels-photo-1591057.jpeg?cs=srgb&dl=buttons-characters-concept-1591057.jpg&fm=jpg';
@@ -59,6 +62,15 @@ const article = (props) => {
                 <Image src={image ? image : defautImage} />
                 <div className="ArticleBody">
                     {renderedBody}
+                    <Container>
+                        {tags.map(tag => (
+                            <TagCard
+                                key={tag.index}
+                                tag={tag}
+                                onClick={handleOnClick}
+                            />
+                        ))}
+                    </Container>
                 </div>
             </Container>
             {isLoggedIn ? (

@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TagsListContainer tests should render TagsListContainer correctly 1`] = `
+<div>
+  <TagsList
+    tags={
+      Array [
+        "body",
+        "love",
+      ]
+    }
+  />
+</div>
+`;
