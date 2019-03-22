@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UserProfile renders correctly 1`] = `
+<Connect(UserProfile)
+  dismissMessage={[MockFunction]}
+  fetchUserArticles={
+    [MockFunction] {
+      "calls": Array [
+        Array [
+          "https://ah-backend-summer-staging.herokuapp.com/api/v1/articles/?author=",
+        ],
+      ],
+      "results": Array [
+        Object {
+          "isThrow": false,
+          "value": undefined,
+        },
+      ],
+    }
+  }
+  fetchUserProfile={
+    [MockFunction] {
+      "calls": Array [
+        Array [
+          Object {
+            "token": null,
+            "username": "",
+          },
+        ],
+      ],
+      "results": Array [
+        Object {
+          "isThrow": false,
+          "value": undefined,
+        },
+      ],
+    }
+  }
+  match={
+    Object {
+      "params": Object {
+        "username": "",
+      },
+    }
+  }
+  onDismissHandler={[Function]}
+  profile={Object {}}
+/>
+`;

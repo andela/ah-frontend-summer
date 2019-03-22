@@ -1,13 +1,38 @@
 /* eslint-disable react/no-unescaped-entities */
 import React from "react";
 import { connect } from 'react-redux';
-import { NavLink } from 'react-router-dom';
-import { Menu, Button, Image, Icon } from "semantic-ui-react";
+import { Menu, Button, Image, Icon, Dropdown } from "semantic-ui-react";
+import { NavLink, Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import lifecycle from 'react-pure-lifecycle';
 import "../styles/navbar.css";
 import branding from '../assets/images/branding.png';
+import { fetchUserProfile } from "../store/actions/async/profiles";
 
-export const Navbar = (props) => {
-    const { navBar } = props;
+const componentDidMount = ({ fetchUserProfile }) => {
+    const token = localStorage.getItem("token");
+    const username = localStorage.getItem("username");
+    fetchUserProfile({ username, token });
+};
+
+const methods = {
+    componentDidMount
+};
+
+export const Navbar = ({ profile }) => {
+    const username = localStorage.getItem("username");
+    const token = localStorage.getItem("token");
+    const trigger = (
+        <span>
+            <Image avatar src={profile.image} />
+        </span>
+    );
+    const options = [
+        { key: 'new-article', text: 'New Article', icon: 'compose', as: Link, to: `/articles/create` },
+        { key: 'bookmark', text: 'Bookmarks', icon: 'bookmark', as: Link, to: `#` },
+        { key: 'profile', text: 'Profile', icon: 'user', as: Link, to: `/${username}` },
+        { key: 'sign-out', text: 'Sign out', icon: 'sign out', as: Link, to: `#` },
+    ];
     return (
         <div>
             <Menu secondary className="mainMenu">
@@ -29,14 +54,12 @@ export const Navbar = (props) => {
                             Tags
                         </NavLink>
                     </Menu.Item>
-                    { navBar.token !== null ? (
+                    { token !== null ? (
                         <Menu.Menu position="right">
                             <NavLink to="/notifications">
                                 <Icon size="large" name="bell outline" className="bellNotification" />
                             </NavLink>
-                            <NavLink to="/profile">
-                                <Icon size="big" name="user circle" className="avatar" />
-                            </NavLink>
+                            <Dropdown trigger={trigger} options={options} icon={null} />
                         </Menu.Menu>
                     ) : (
                         <Menu.Menu position="right">
@@ -62,8 +85,19 @@ export const Navbar = (props) => {
 
 const mapStateToProps = (state) => {
     return { 
-        navBar: state.login };
+        profile: state.profile.profile
+    };
 };
 
+const mapDispatchToProps = dispatch => {
+    return {
+        fetchUserProfile: payload => dispatch(fetchUserProfile(payload))
+    }
+}
 
-export default connect(mapStateToProps)(Navbar);
+Navbar.propTypes = {
+    profile: PropTypes.object.isRequired
+}
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(lifecycle(methods)(Navbar));

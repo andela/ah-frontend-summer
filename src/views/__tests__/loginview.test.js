@@ -65,7 +65,9 @@ describe("login view", () => {
     it("should map dispatch to props", () => {
         mapDispatchToProps(dispatch).facebookLogin();
         mapDispatchToProps(dispatch).googleLogin();
-        expect(dispatch.mock.calls.length).toBe(2);
+        mapDispatchToProps(dispatch).login();
+        mapDispatchToProps(dispatch).dismissLoginError();
+        expect(dispatch.mock.calls.length).toBe(4);
     });
 
     it("should map state to props", () => {

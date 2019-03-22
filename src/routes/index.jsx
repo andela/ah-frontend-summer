@@ -14,6 +14,9 @@ import ArticlesView from "../views/ArticlesView";
 import Article from '../containers/Articles/Article/Article';
 import CreateArticle from '../containers/Articles/Article/CreateArticle';
 import UpdateArticle from '../containers/Articles/Article/UpdateArticle';
+import UserProfileContainer from '../containers/Profiles/UserProfileContainer';
+import EditProfileContainer from '../containers/Profiles/EditProfileContainer';
+import FollowersFollowing from '../containers/Profiles/FollowersFollowing';
 
 
 const Routes = () => (
@@ -25,16 +28,20 @@ const Routes = () => (
                 <Route path="/forgot-password" component={PasswordRequestContainer} />
                 <Route path="/reset-password/:token" component={PasswordResetContainer} />
                 <Layout>
-                    <Route path="/" exact component={HomeView} />
+                    <ToastContainer />
                     <Switch>
+                        <Route path="/" exact component={HomeView} />
                         <Route path="/articles" exact component={ArticlesView} />
                         <Route path="/articles/create" exact component={CreateArticle} />
                         <Route path="/articles/update/:slug" exact component={UpdateArticle} />
-                        <Route path="/articles/:slug" component={Article} />
+                        <Route path="/articles/:slug" exact component={Article} />
+                        <Route path="/tags" component={LoginView} />
+                        <Route path="/email-verification/:token" exact component={EmailVerificationView} />
+                        <Route exact path="/:username" component={UserProfileContainer} />
+                        <Route exact path="/:username/edit" component={EditProfileContainer} />
+                        <Route exact path="/:username/followers" component={FollowersFollowing} />
+                        <Route exact path="/:username/following" component={FollowersFollowing} />
                     </Switch>
-                    <Route path="/tags" component={CreateArticle} />
-                    <Route path="/email-verification/:token" exact component={EmailVerificationView} />
-                    <ToastContainer />
                 </Layout>
             </Switch>
         </div>

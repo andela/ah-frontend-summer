@@ -31,41 +31,6 @@ exports[`App rendering tests renders without crashing 1`] = `
         path="/reset-password/:token"
       />
       <Connect(Layout)>
-        <Route
-          component={[Function]}
-          exact={true}
-          path="/"
-        />
-        <Switch>
-          <Route
-            component={[Function]}
-            exact={true}
-            path="/articles"
-          />
-          <Route
-            component={[Function]}
-            exact={true}
-            path="/articles/create"
-          />
-          <Route
-            component={[Function]}
-            exact={true}
-            path="/articles/update/:slug"
-          />
-          <Route
-            component={[Function]}
-            path="/articles/:slug"
-          />
-        </Switch>
-        <Route
-          component={[Function]}
-          path="/tags"
-        />
-        <Route
-          component={[Function]}
-          exact={true}
-          path="/email-verification/:token"
-        />
         <ToastContainer
           autoClose={5000}
           bodyClassName={null}
@@ -90,6 +55,62 @@ exports[`App rendering tests renders without crashing 1`] = `
           toastClassName={null}
           transition={[Function]}
         />
+        <Switch>
+          <Route
+            component={[Function]}
+            exact={true}
+            path="/"
+          />
+          <Route
+            component={[Function]}
+            exact={true}
+            path="/articles"
+          />
+          <Route
+            component={[Function]}
+            exact={true}
+            path="/articles/create"
+          />
+          <Route
+            component={[Function]}
+            exact={true}
+            path="/articles/update/:slug"
+          />
+          <Route
+            component={[Function]}
+            exact={true}
+            path="/articles/:slug"
+          />
+          <Route
+            component={[Function]}
+            path="/tags"
+          />
+          <Route
+            component={[Function]}
+            exact={true}
+            path="/email-verification/:token"
+          />
+          <Route
+            component={[Function]}
+            exact={true}
+            path="/:username"
+          />
+          <Route
+            component={[Function]}
+            exact={true}
+            path="/:username/edit"
+          />
+          <Route
+            component={[Function]}
+            exact={true}
+            path="/:username/followers"
+          />
+          <Route
+            component={[Function]}
+            exact={true}
+            path="/:username/following"
+          />
+        </Switch>
       </Connect(Layout)>
     </Switch>
   </div>
@@ -117,41 +138,6 @@ exports[`App rendering tests renders without crashing 2`] = `
         path="/reset-password/:token"
       />
       <Connect(Layout)>
-        <Route
-          component={[Function]}
-          exact={true}
-          path="/"
-        />
-        <Switch>
-          <Route
-            component={[Function]}
-            exact={true}
-            path="/articles"
-          />
-          <Route
-            component={[Function]}
-            exact={true}
-            path="/articles/create"
-          />
-          <Route
-            component={[Function]}
-            exact={true}
-            path="/articles/update/:slug"
-          />
-          <Route
-            component={[Function]}
-            path="/articles/:slug"
-          />
-        </Switch>
-        <Route
-          component={[Function]}
-          path="/tags"
-        />
-        <Route
-          component={[Function]}
-          exact={true}
-          path="/email-verification/:token"
-        />
         <ToastContainer
           autoClose={5000}
           bodyClassName={null}
@@ -176,6 +162,62 @@ exports[`App rendering tests renders without crashing 2`] = `
           toastClassName={null}
           transition={[Function]}
         />
+        <Switch>
+          <Route
+            component={[Function]}
+            exact={true}
+            path="/"
+          />
+          <Route
+            component={[Function]}
+            exact={true}
+            path="/articles"
+          />
+          <Route
+            component={[Function]}
+            exact={true}
+            path="/articles/create"
+          />
+          <Route
+            component={[Function]}
+            exact={true}
+            path="/articles/update/:slug"
+          />
+          <Route
+            component={[Function]}
+            exact={true}
+            path="/articles/:slug"
+          />
+          <Route
+            component={[Function]}
+            path="/tags"
+          />
+          <Route
+            component={[Function]}
+            exact={true}
+            path="/email-verification/:token"
+          />
+          <Route
+            component={[Function]}
+            exact={true}
+            path="/:username"
+          />
+          <Route
+            component={[Function]}
+            exact={true}
+            path="/:username/edit"
+          />
+          <Route
+            component={[Function]}
+            exact={true}
+            path="/:username/followers"
+          />
+          <Route
+            component={[Function]}
+            exact={true}
+            path="/:username/following"
+          />
+        </Switch>
       </Connect(Layout)>
     </Switch>
   </div>

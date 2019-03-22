@@ -1,0 +1,111 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EditProfile renders correctly 1`] = `
+<Container>
+  <Segment
+    color="teal"
+    loading={false}
+    padded="very"
+  >
+    <Grid
+      columns={2}
+    >
+      <GridColumn>
+        <Form
+          as="form"
+          onSubmit={[MockFunction]}
+        >
+          <Container
+            textAlign="left"
+          >
+            <div
+              className="spaceComponents"
+            >
+              <FormInput
+                as={[Function]}
+                control={[Function]}
+                fluid={true}
+                name="firstName"
+                onChange={[MockFunction]}
+                placeholder="First Name"
+                value=""
+              />
+              <FormInput
+                as={[Function]}
+                control={[Function]}
+                fluid={true}
+                name="lastName"
+                onChange={[MockFunction]}
+                placeholder="Last Name"
+                value=""
+              />
+              <textarea
+                name="bio"
+                onChange={[MockFunction]}
+                placeholder="Bio"
+                value=""
+              />
+              <Button
+                as="button"
+                basic={true}
+                className="UpdateButton"
+                color="teal"
+                disabled={true}
+                loading={false}
+                type="submit"
+              >
+                Edit Profile
+              </Button>
+              <Link
+                to="/"
+              >
+                <Button
+                  as="button"
+                  color="teal"
+                >
+                  Cancel
+                </Button>
+              </Link>
+            </div>
+          </Container>
+        </Form>
+      </GridColumn>
+      <GridColumn>
+        <Container
+          textAlign="right"
+        >
+          <Image
+            as="img"
+            avatar={true}
+            size="small"
+            src=""
+            style={
+              Object {
+                "borderRadius": "50%",
+              }
+            }
+            ui={true}
+          />
+          <div
+            className="FileUploaderContainer"
+          >
+            <input
+              className="FileUploader"
+              name="image"
+              onChange={[MockFunction]}
+              type="file"
+            />
+            <br />
+            <br />
+            <Icon
+              as="i"
+              name="pencil alternate"
+              size="large"
+            />
+          </div>
+        </Container>
+      </GridColumn>
+    </Grid>
+  </Segment>
+</Container>
+`;
