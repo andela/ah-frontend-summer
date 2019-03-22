@@ -6,8 +6,9 @@ import Article from '../Article';
 describe('<Article />', () => {
     it('Article will render without crashing', () => {
         const props = {
-            body: "body"
-        }
+            body: "body",
+            tags:[]
+        };
         let wrapper = shallow(<Article {...props}/>);
         expect(wrapper).toMatchSnapshot();
     });

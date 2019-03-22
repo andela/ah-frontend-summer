@@ -1,24 +1,25 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import {Container} from "semantic-ui-react";
+import { Container } from "semantic-ui-react";
 import ArticleList from '../../components/article/ArticleList';
-import { fetchArticlesAction } from '../../store/actions/async/ArticleActions';
+import fetchTagFiltersAction from '../../store/actions/async/TagFiltersActions';
 import ArticleLoading from "../../components/article/ArticleLoading";
 import ArticleError from "../../components/article/ArticleError";
-import {FAILED, SUCCEEDED} from "../../store/actions/async";
+import { FAILED, SUCCEEDED } from "../../store/actions/async";
 
-export class ArticleListContainer extends Component {
+export class TagArticlesContainer extends Component {
 
-    componentDidMount(){
+    componentDidMount() {
         this.fetchArticles();
     }
     fetchArticles = () => {
-        const { loading } = this.props;
-        if (loading){
+        const { loading, match } = this.props;
+        if (loading) {
             return;
         }
-        const url = 'https://ah-backend-summer-staging.herokuapp.com/api/v1/articles';
+        this.tag = match.params.tag;
+        const url = `https://ah-backend-summer-staging.herokuapp.com/api/v1/articles/?tag=${this.tag}`;
         const { fetchArticles } = this.props;
         fetchArticles(url);
     };
@@ -26,16 +27,16 @@ export class ArticleListContainer extends Component {
         const { loading, status } = this.props;
         let toRender;
 
-        if (loading){
+        if (loading) {
             toRender = <ArticleLoading />;
         }
-        else if(status === FAILED){
+        else if (status === FAILED) {
             toRender = <ArticleError retry={this.fetchArticles} />;
         }
-        else if(status === SUCCEEDED){
-            toRender= <ArticleList {...this.props} />;
+        else if (status === SUCCEEDED) {
+            toRender = <ArticleList {...this.props} title={`${this.tag} articles`} paginating />;
         }
-        else{
+        else {
             toRender = 'Could not load Articles';
         }
 
@@ -67,18 +68,19 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        fetchArticles : url => dispatch(fetchArticlesAction(url))
+        fetchArticles: url => dispatch(fetchTagFiltersAction(url))
     };
 };
 
-ArticleListContainer.propTypes = {
+TagArticlesContainer.propTypes = {
     loading: PropTypes.bool,
     status: PropTypes.string.isRequired,
-    fetchArticles : PropTypes.func.isRequired,
+    fetchArticles: PropTypes.func.isRequired,
+    match: PropTypes.object.isRequired
 };
 
-ArticleListContainer.defaultProps = {
+TagArticlesContainer.defaultProps = {
     loading: true,
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(ArticleListContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(TagArticlesContainer);

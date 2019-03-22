@@ -77,13 +77,13 @@ export class Article extends Component {
                     facebook={article.share_links.facebook}
                     twitter={article.share_links.twitter}
                     email={article.share_links.email}
+                    tags={article.tag_list}
                 />
             );
         } else if (error) {
             dangerToast(error.articles.errors);
             this.renderArticle = (<Redirect to="/" />);
         };
-
         return (
             <div>
                 <Modal

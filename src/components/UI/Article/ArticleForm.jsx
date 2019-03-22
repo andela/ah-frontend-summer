@@ -9,9 +9,11 @@ import {
 } from 'semantic-ui-react';
 import CKEditor from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import { WithContext as ReactTags } from 'react-tag-input';
 
 import '../../../assets/styles/CreateArticleForm.scss';
 import '../../../assets/styles/SignupForm.scss';
+import '../../../assets/styles/TagsInput.scss';
 
 const editorConfig = {
     toolbar: [
@@ -28,6 +30,12 @@ const editorConfig = {
     placeholder: 'Create your Article...'
 };
 
+const KeyCodes = {
+    comma: 188,
+    enter: 13,
+};
+const delimiters = [KeyCodes.comma, KeyCodes.enter];
+
 const articleForm = (props) => {
     const {
         formTitle,
@@ -38,8 +46,15 @@ const articleForm = (props) => {
         submitData,
         loading,
         disabled,
-        buttonAction
-     } = props
+        buttonAction,
+        suggestions,
+        tags,
+        handleDelete,
+        handleAddition,
+        handleDrag,
+        handleTagClick,
+        createMode
+    } = props;
     return (
         <div className="CreateArticleForm">
             <Container>
@@ -49,56 +64,68 @@ const articleForm = (props) => {
                     </Header>
                     <Form padded="very">
                         <div className="spaceComponents">
-                            <Label as='a' color='teal' ribbon>
+                            <Label as="a" color="teal" ribbon>
                                 Title
                             </Label>
                             <Form.Input
-                                size='large'
-                                name='title'
+                                size="large"
+                                name="title"
                                 fluid
                                 required
                                 onChange={inputChanged}
                                 value={title}
-                                />
-                            <Label as='a' color='teal' ribbon>
+                            />
+                            <Label as="a" color="teal" ribbon>
                                 Description
                             </Label>
                             <Form.Input
-                                size='large'
-                                name='description'
+                                size="large"
+                                name="description"
                                 fluid
                                 required
                                 onChange={inputChanged}
                                 value={description}
-                                />
-                                <Label as='a' color='teal' ribbon>
+                            />
+                            <Label as="a" color="teal" ribbon>
                                     Body
-                                </Label>
-                                <CKEditor
-                                    editor={ ClassicEditor }
-                                    config={editorConfig}
-                                    data={props.body}
-                                    onChange={props.bodyChanged}
-                                    name="boddyEditor"
-                                    />
-                                <Label as='a' color='teal' ribbon>
+                            </Label>
+                            <CKEditor
+                                editor={ClassicEditor}
+                                config={editorConfig}
+                                data={props.body}
+                                onChange={props.bodyChanged}
+                                name="boddyEditor"
+                            />
+                            <Label as="a" color="teal" ribbon>
                                     Image
-                                </Label>
-                                <div className='ImageInputField'>
-                                    <input
-                                        type='file'
-                                        id='single'
-                                        onChange={onImageUpload}
-                                        />
-                                </div>
+                            </Label>
+                            <div className="ImageInputField">
+                                <input
+                                    type="file"
+                                    id="single"
+                                    onChange={onImageUpload}
+                                />
+                            </div>
+                            { createMode ? (
+                                <ReactTags
+                                    tags={tags}
+                                    suggestions={suggestions}
+                                    delimiters={delimiters}
+                                    handleDelete={handleDelete}
+                                    handleAddition={handleAddition}
+                                    handleDrag={handleDrag}
+                                    handleTagClick={handleTagClick}
+                                />
+                            ) : null
+                            }
                             <Button
                                 fluid
                                 basic
-                                color='teal'
+                                color="teal"
                                 onClick={submitData}
                                 loading={loading}
                                 disabled={disabled}
-                                size='huge'>
+                                size="huge">
                                 {buttonAction}
                             </Button>
                         </div>
@@ -107,7 +134,7 @@ const articleForm = (props) => {
                 </Segment>
             </Container>
         </div>
-    )
+    );
 };
 
 export default articleForm;

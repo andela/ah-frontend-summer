@@ -25,6 +25,7 @@ exports[`<Article /> Article will render without crashing 1`] = `
       className="ArticleBody"
     >
       body
+      <Container />
     </div>
   </Container>
 </div>

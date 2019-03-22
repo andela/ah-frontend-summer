@@ -30,8 +30,13 @@
 }
 
 @media (max-width: 414px) {
-    .navItems{
+    .navHome{
         display: none !important;
+    }
+
+    .navTags{
+        padding-left: 5px !important;
+        padding-right: 5px !important;
     }
 
     .mainMenu{

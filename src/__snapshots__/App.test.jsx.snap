@@ -83,12 +83,17 @@ exports[`App rendering tests renders without crashing 1`] = `
           />
           <Route
             component={[Function]}
-            path="/tags"
+            exact={true}
+            path="/email-verification/:token"
           />
           <Route
             component={[Function]}
             exact={true}
-            path="/email-verification/:token"
+            path="/tags/:tag"
+          />
+          <Route
+            component={[Function]}
+            path="/tags"
           />
           <Route
             component={[Function]}
@@ -190,12 +195,17 @@ exports[`App rendering tests renders without crashing 2`] = `
           />
           <Route
             component={[Function]}
-            path="/tags"
+            exact={true}
+            path="/email-verification/:token"
           />
           <Route
             component={[Function]}
             exact={true}
-            path="/email-verification/:token"
+            path="/tags/:tag"
+          />
+          <Route
+            component={[Function]}
+            path="/tags"
           />
           <Route
             component={[Function]}

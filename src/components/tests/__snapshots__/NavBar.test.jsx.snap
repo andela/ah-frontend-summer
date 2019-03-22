@@ -25,7 +25,7 @@ exports[`Navbar test should render Navbar with default state 1`] = `
       position="right"
     >
       <MenuItem
-        className="navItems"
+        className="navHome"
         name="menu"
       >
         <NavLink
@@ -37,7 +37,7 @@ exports[`Navbar test should render Navbar with default state 1`] = `
         </NavLink>
       </MenuItem>
       <MenuItem
-        className="navItems"
+        className="navTags"
         name="tags"
       >
         <NavLink
@@ -110,7 +110,7 @@ exports[`Navbar test should render Navbar with logged in state 1`] = `
       position="right"
     >
       <MenuItem
-        className="navItems"
+        className="navHome"
         name="menu"
       >
         <NavLink
@@ -122,7 +122,7 @@ exports[`Navbar test should render Navbar with logged in state 1`] = `
         </NavLink>
       </MenuItem>
       <MenuItem
-        className="navItems"
+        className="navTags"
         name="tags"
       >
         <NavLink
