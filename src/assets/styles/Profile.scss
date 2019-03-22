@@ -1,0 +1,27 @@
+.FileUploaderContainer {
+    position: relative;
+    bottom: 110px;
+    right: 50px;
+}
+
+.FileUploader {
+    width: 20px;
+    position: absolute;
+    top: 40px;
+    opacity: 0;
+    right: 5px;
+}
+
+.ProfileEdit h2 {
+    display: inline;
+    margin-right: 2px;
+}
+
+.ProfileEdit span {
+    color: teal;
+    margin-right: 15px;
+}
+
+.UpdateButton {
+    margin-top: 10px !important;
+}

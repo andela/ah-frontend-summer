@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EditProfileContainer renders correctly 1`] = `
+<EditProfile
+  bio=""
+  disabled={true}
+  dismissMessage={[MockFunction]}
+  fetchUserProfile={
+    [MockFunction] {
+      "calls": Array [
+        Array [
+          Object {
+            "token": null,
+            "username": undefined,
+          },
+        ],
+      ],
+      "results": Array [
+        Object {
+          "isThrow": false,
+          "value": undefined,
+        },
+      ],
+    }
+  }
+  firstName=""
+  image={null}
+  imageHandler={[Function]}
+  lastName=""
+  loadingEditButton={false}
+  match={
+    Object {
+      "params": Object {},
+    }
+  }
+  onChangeHandler={[Function]}
+  onDismissHandler={[Function]}
+  onSubmitHandler={[Function]}
+  profile={Object {}}
+  profileLoading={false}
+  profileUpdateMessage=""
+  requestEditProfile={[MockFunction]}
+/>
+`;

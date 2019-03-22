@@ -10,6 +10,13 @@ import storage from 'jest-localstorage-mock';
 // of react
 configure({ adapter: new Adapter() });
 
+class FormDataMock {
+    constructor(){
+        this.append = jest.fn();
+    };
+};
+
 // mock the global fetch api during tests
 global.fetch = jest_fetch_mock;
 global.localStorage = storage;
+global.FormData = FormDataMock;

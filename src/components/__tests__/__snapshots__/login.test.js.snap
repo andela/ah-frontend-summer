@@ -229,7 +229,6 @@ exports[`Login renders login component correctly 1`] = `
                             </FormField>
                           </FormButton>
                           <Link
-                            replace={false}
                             to="/forgot-password"
                           >
                             <a
@@ -445,8 +444,6 @@ exports[`Login renders login component correctly 1`] = `
                       className="spaceComponents"
                     >
                       <NavLink
-                        activeClassName="active"
-                        aria-current="page"
                         to="/signup"
                       >
                         <Route
@@ -454,7 +451,6 @@ exports[`Login renders login component correctly 1`] = `
                         >
                           <Link
                             aria-current={null}
-                            replace={false}
                             to="/signup"
                           >
                             <a

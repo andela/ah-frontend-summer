@@ -10,8 +10,6 @@ exports[`Navbar test should render Navbar with default state 1`] = `
       header={true}
     >
       <NavLink
-        activeClassName="active"
-        aria-current="page"
         to="/"
       >
         <Image
@@ -29,8 +27,6 @@ exports[`Navbar test should render Navbar with default state 1`] = `
         name="menu"
       >
         <NavLink
-          activeClassName="active"
-          aria-current="page"
           to="/"
         >
           Home
@@ -41,8 +37,6 @@ exports[`Navbar test should render Navbar with default state 1`] = `
         name="tags"
       >
         <NavLink
-          activeClassName="active"
-          aria-current="page"
           to="/tags"
         >
           Tags
@@ -51,30 +45,30 @@ exports[`Navbar test should render Navbar with default state 1`] = `
       <MenuMenu
         position="right"
       >
-        <NavLink
-          activeClassName="active"
-          aria-current="page"
-          to="/notifications"
+        <MenuItem
+          className="navItems"
+          name="signIn"
         >
-          <Icon
-            as="i"
-            className="bellNotification"
-            name="bell outline"
-            size="large"
-          />
-        </NavLink>
-        <NavLink
-          activeClassName="active"
-          aria-current="page"
-          to="/profile"
-        >
-          <Icon
-            as="i"
-            className="avatar"
-            name="user circle"
-            size="big"
-          />
-        </NavLink>
+          <NavLink
+            to="/login"
+          >
+            Sign in
+          </NavLink>
+        </MenuItem>
+        <MenuItem>
+          <NavLink
+            to="/signup"
+          >
+            <Button
+              as="button"
+              basic={true}
+              className="getStartedBtn"
+              color="teal"
+            >
+              Get Started
+            </Button>
+          </NavLink>
+        </MenuItem>
       </MenuMenu>
     </MenuMenu>
   </Menu>
@@ -91,8 +85,6 @@ exports[`Navbar test should render Navbar with logged in state 1`] = `
       header={true}
     >
       <NavLink
-        activeClassName="active"
-        aria-current="page"
         to="/"
       >
         <Image
@@ -110,8 +102,6 @@ exports[`Navbar test should render Navbar with logged in state 1`] = `
         name="menu"
       >
         <NavLink
-          activeClassName="active"
-          aria-current="page"
           to="/"
         >
           Home
@@ -122,8 +112,6 @@ exports[`Navbar test should render Navbar with logged in state 1`] = `
         name="tags"
       >
         <NavLink
-          activeClassName="active"
-          aria-current="page"
           to="/tags"
         >
           Tags
@@ -132,30 +120,30 @@ exports[`Navbar test should render Navbar with logged in state 1`] = `
       <MenuMenu
         position="right"
       >
-        <NavLink
-          activeClassName="active"
-          aria-current="page"
-          to="/notifications"
+        <MenuItem
+          className="navItems"
+          name="signIn"
         >
-          <Icon
-            as="i"
-            className="bellNotification"
-            name="bell outline"
-            size="large"
-          />
-        </NavLink>
-        <NavLink
-          activeClassName="active"
-          aria-current="page"
-          to="/profile"
-        >
-          <Icon
-            as="i"
-            className="avatar"
-            name="user circle"
-            size="big"
-          />
-        </NavLink>
+          <NavLink
+            to="/login"
+          >
+            Sign in
+          </NavLink>
+        </MenuItem>
+        <MenuItem>
+          <NavLink
+            to="/signup"
+          >
+            <Button
+              as="button"
+              basic={true}
+              className="getStartedBtn"
+              color="teal"
+            >
+              Get Started
+            </Button>
+          </NavLink>
+        </MenuItem>
       </MenuMenu>
     </MenuMenu>
   </Menu>

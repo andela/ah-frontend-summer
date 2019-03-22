@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FollowersFollowing renders correctly 1`] = `
+<FollowerFollowing
+  fetchUserProfile={
+    [MockFunction] {
+      "calls": Array [
+        Array [
+          Object {
+            "token": null,
+            "username": "",
+          },
+        ],
+      ],
+      "results": Array [
+        Object {
+          "isThrow": false,
+          "value": undefined,
+        },
+      ],
+    }
+  }
+  location={
+    Object {
+      "pathname": "",
+    }
+  }
+  match={
+    Object {
+      "params": Object {
+        "username": "",
+      },
+    }
+  }
+  profile={Object {}}
+/>
+`;

@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UserProfile renders correctly 1`] = `
+<Segment>
+  <Container
+    text={true}
+  >
+    <Grid>
+      <GridRow>
+        <GridColumn
+          className="ProfileEdit"
+          width={9}
+        >
+          <h2 />
+          <h3 />
+          <Link
+            to="//followers"
+          >
+            <span>
+                Followers
+            </span>
+          </Link>
+          <Link
+            to="//following"
+          >
+            <span>
+                Following
+            </span>
+          </Link>
+        </GridColumn>
+        <GridColumn
+          floated="right"
+          width={4}
+        >
+          <Image
+            as="img"
+            avatar={true}
+            size="small"
+            style={
+              Object {
+                "borderRadius": "50%",
+              }
+            }
+            ui={true}
+          />
+        </GridColumn>
+      </GridRow>
+      <ArticleList
+        articles={Array []}
+        paginating={true}
+        title="My Articles"
+      />
+    </Grid>
+  </Container>
+</Segment>
+`;

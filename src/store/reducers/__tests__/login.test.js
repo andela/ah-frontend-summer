@@ -2,7 +2,8 @@ import loginReducer from "../login";
 import {
     FAILED_LOGIN_USER,
     REMOVE_LOGIN_ERROR,
-    LOGIN_USER
+    LOGIN_USER,
+    LOGIN_STARTED
 } from "../../actions/sync/login";
 
 describe("login reducer", () => {
@@ -15,6 +16,10 @@ describe("login reducer", () => {
 
     it("undefined action returns initial state", () => {
         expect(loginReducer(initialState, { type: "okay" })).toEqual(initialState);
+    });
+
+    it("LOGIN_STARTED action sets loading to  true", () => {
+        expect(loginReducer(initialState, { type: LOGIN_STARTED }).loading).toBe(true);
     });
 
     it("FAILED_LOGIN_USER action sets loginError to true", () => {
