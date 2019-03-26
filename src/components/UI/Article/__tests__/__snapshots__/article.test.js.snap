@@ -27,6 +27,40 @@ exports[`<Article /> Article will render without crashing 1`] = `
       body
       <Container />
     </div>
+    <Grid
+      columns={3}
+      stackable={true}
+    >
+      <GridColumn>
+        <Container
+          textAlign="left"
+        >
+          <button
+            className="LikeDislikeButton"
+          >
+            <Icon
+              as="i"
+              name="thumbs up outline"
+              size="large"
+            />
+          </button>
+           
+          <span />
+          <button
+            className="LikeDislikeButton"
+          >
+            <Icon
+              as="i"
+              name="thumbs down outline"
+              size="large"
+            />
+          </button>
+          <span />
+        </Container>
+      </GridColumn>
+      <GridColumn />
+      <GridColumn />
+    </Grid>
   </Container>
 </div>
 `;

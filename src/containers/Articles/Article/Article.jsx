@@ -35,11 +35,46 @@ export class Article extends Component {
         this.setState({ showModal: false });
     }
 
+    isAuthenticated = () => localStorage.getItem("token") !== null;
+
+    likeArticleHandler = () => {
+        let slug = this.props.match.params.slug;
+        const {
+            article,
+            onArticleLiked,
+            onRevertingLike,
+            history
+        } = this.props;
+        if (!this.isAuthenticated()) {
+            history.push('/login');
+        } else if (article && article.liked) {
+            onRevertingLike(slug);
+        } else {
+            onArticleLiked(slug);
+        };
+    }
+
+    dislikeArticleHandler = () => {
+        let slug = this.props.match.params.slug;
+        const {
+            article,
+            onArticleDisliked,
+            onRevertingDislike,
+            history
+        } = this.props;
+        if (!this.isAuthenticated()) {
+            history.push('/login');
+        } else if (article && article.disliked) {
+            onRevertingDislike(slug);
+        } else {
+            onArticleDisliked(slug);
+        };
+    }
+
     render() {
         this.renderArticle = (<Loader />);
         this.created_at = null;
         this.isAuthor = false;
-        this.isAuthenticated = localStorage.getItem("token") !== null;
         this.username = localStorage.getItem("username");
         const { article, loading, error } = this.props;
         this.confirmButtons = null;
@@ -58,7 +93,7 @@ export class Article extends Component {
             if (this.username) {
                 this.isAuthor = (this.username ===
                     article.author.username
-                    && this.isAuthenticated)
+                    && this.isAuthenticated())
             };
             this.created_at = article.created_at.substr(0,
                 article.created_at.indexOf("T"));
@@ -78,6 +113,12 @@ export class Article extends Component {
                     twitter={article.share_links.twitter}
                     email={article.share_links.email}
                     tags={article.tag_list}
+                    likes={article.like_count}
+                    dislikes={article.dislike_count}
+                    userLikesArticle={article.liked}
+                    userDislikesArticle={article.disliked}
+                    likeArticle={this.likeArticleHandler}
+                    dislikeArticle={this.dislikeArticleHandler}
                 />
             );
         } else if (error) {
@@ -108,7 +149,11 @@ export const mapStateToProps = (state) => {
 export const mapDispatchToProps = (dispatch) => {
     return {
         onGetArticle: (slug) => dispatch(actions.getArticle(slug)),
-        onDeleteArticle: (slug) => dispatch(actions.deleteArticle(slug))
+        onDeleteArticle: (slug) => dispatch(actions.deleteArticle(slug)),
+        onArticleLiked: (slug) => dispatch(actions.likeArticle(slug)),
+        onRevertingLike: (slug) => dispatch(actions.revertLike(slug)),
+        onArticleDisliked: (slug) => dispatch(actions.dislikeArticle(slug)),
+        onRevertingDislike: (slug) => dispatch(actions.revertDislike(slug))
     };
 };
 

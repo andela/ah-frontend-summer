@@ -6,6 +6,10 @@ import Loader from '../../../../components/UI/Loader';
 
 describe('tests Article View', () => {
     const push = jest.fn();
+    const onArticleDisliked = jest.fn();
+    const onRevertingDislike = jest.fn();
+    const onRevertingLike = jest.fn();
+    const onArticleLiked = jest.fn();
     const props = {
         onGetArticle: jest.fn(),
         history: { push },
@@ -15,7 +19,11 @@ describe('tests Article View', () => {
             params: { slug: "article-slug" }
         },
         onDeleteArticle: jest.fn(),
-        error: null
+        error: null,
+        onArticleLiked: jest.fn(),
+        onRevertingLike: jest.fn(),
+        onRevertingDislike: jest.fn(),
+        onArticleDisliked: jest.fn()
     };
     let article = {
         title: 'article',
@@ -63,10 +71,24 @@ describe('tests Article View', () => {
         expect(mapStateToProps({ article })).toEqual({ "loading": true, "article": "articles" });
     });
 
+    it('should redirect users to login page if not authenticated and if likeArticleHandler is called', () => {
+        instance.likeArticleHandler();
+        expect(push).toHaveBeenCalled();
+    });
+
+    it('should redirect users to login page if not authenticated and if dislikeArticleHandler is called', () => {
+        instance.dislikeArticleHandler();
+        expect(push).toHaveBeenCalled();
+    });
+
     it('should dispatch state to props', () => {
         const dispatch = jest.fn();
         mapDispatchToProps(dispatch).onDeleteArticle();
         mapDispatchToProps(dispatch).onGetArticle();
-        expect(dispatch.mock.calls.length).toBe(2);
+        mapDispatchToProps(dispatch).onArticleLiked();
+        mapDispatchToProps(dispatch).onRevertingLike();
+        mapDispatchToProps(dispatch).onArticleDisliked();
+        mapDispatchToProps(dispatch).onRevertingDislike();
+        expect(dispatch.mock.calls.length).toBe(6);
     });
 });
