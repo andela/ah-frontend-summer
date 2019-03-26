@@ -11,6 +11,8 @@ import { dangerToast, infoToast } from "../../../components/Toast/toast";
 import Modal from "../../../components/UI/Modal/Modal";
 import CommentListContainer from "../../Comments/CommentListContainer";
 import RatingContainer from './RatingContainer';
+import { successToast } from "../../../components/UI/Toast/toast";
+import { dismissMessage } from "../../../store/actions/sync/ReportArticle";
 
 export class Article extends Component {
 
@@ -76,7 +78,7 @@ export class Article extends Component {
         this.created_at = null;
         this.isAuthor = false;
         this.username = localStorage.getItem("username");
-        const { article, loading, error } = this.props;
+        const { article, loading, error, message, dismissMessage } = this.props;
         this.confirmButtons = null;
         if (this.state.showModal) {
             this.confirmButtons = (
@@ -119,12 +121,19 @@ export class Article extends Component {
                     userDislikesArticle={article.disliked}
                     likeArticle={this.likeArticleHandler}
                     dislikeArticle={this.dislikeArticleHandler}
+                    hasReported={article.has_reported}
                 />
             );
         } else if (error) {
             dangerToast(error.articles.errors);
             this.renderArticle = (<Redirect to="/" />);
         };
+        
+        if(message){
+            successToast(message);
+            dismissMessage();
+        }
+
         return (
             <div>
                 <Modal
@@ -142,7 +151,8 @@ export const mapStateToProps = (state) => {
     return {
         article: state.article.article,
         loading: state.article.loading,
-        error: state.article.error
+        error: state.article.error,
+        message: state.reportArticle.message
     };
 };
 
@@ -153,7 +163,8 @@ export const mapDispatchToProps = (dispatch) => {
         onArticleLiked: (slug) => dispatch(actions.likeArticle(slug)),
         onRevertingLike: (slug) => dispatch(actions.revertLike(slug)),
         onArticleDisliked: (slug) => dispatch(actions.dislikeArticle(slug)),
-        onRevertingDislike: (slug) => dispatch(actions.revertDislike(slug))
+        onRevertingDislike: (slug) => dispatch(actions.revertDislike(slug)),
+        dismissMessage: () => dispatch(dismissMessage())
     };
 };
 

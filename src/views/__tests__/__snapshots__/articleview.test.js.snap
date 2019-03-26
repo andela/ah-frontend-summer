@@ -5,6 +5,7 @@ exports[`render Article View Container renders rate component correctly 1`] = `
   <Connect(ArticleListContainer)
     paginating={true}
     title="Articles"
+    url="https://ah-backend-summer-staging.herokuapp.com/api/v1/articles"
   />
 </div>
 `;

@@ -68,7 +68,12 @@ describe('tests Article View', () => {
 
     it('should map state to props', () => {
         const article = { loading: true, article: "articles" };
-        expect(mapStateToProps({ article })).toEqual({ "loading": true, "article": "articles" });
+        const reportArticle = { message: "" }
+        expect(mapStateToProps({ article, reportArticle })).toEqual({
+            "loading": true, 
+            "article": "articles",
+            "message": ""
+        });
     });
 
     it('should redirect users to login page if not authenticated and if likeArticleHandler is called', () => {

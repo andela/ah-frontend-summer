@@ -14,7 +14,6 @@ exports[`UserProfile renders correctly 1`] = `
           <h2 />
           <h3 />
           <Link
-            replace={false}
             to="//followers"
           >
             <span>
@@ -22,7 +21,6 @@ exports[`UserProfile renders correctly 1`] = `
             </span>
           </Link>
           <Link
-            replace={false}
             to="//following"
           >
             <span>
@@ -51,6 +49,7 @@ exports[`UserProfile renders correctly 1`] = `
         articles={Array []}
         paginating={true}
         title="My Articles"
+        url="https://ah-backend-summer-staging.herokuapp.com/api/v1/articles"
       />
     </Grid>
   </Container>

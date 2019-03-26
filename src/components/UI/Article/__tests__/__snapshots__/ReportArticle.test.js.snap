@@ -1,0 +1,95 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Report Article renders correctly 1`] = `
+<Container>
+  <Grid>
+    <GridRow>
+      <GridColumn
+        width={4}
+      />
+      <GridColumn
+        width={8}
+      >
+        <Segment
+          color="teal"
+          padded="very"
+        >
+          <Grid>
+            <GridRow>
+              <GridColumn
+                width={4}
+              />
+              <GridColumn
+                width={8}
+              >
+                <Form
+                  as="form"
+                  onSubmit={[MockFunction]}
+                >
+                  <h3>
+                    Report Article
+                  </h3>
+                  <FormField>
+                    <Radio
+                      checked={false}
+                      label="Spam"
+                      name="spam"
+                      onChange={[MockFunction]}
+                      type="radio"
+                      value="spam"
+                    />
+                  </FormField>
+                  <FormField>
+                    <Radio
+                      checked={false}
+                      label="Harassment"
+                      name="harassment"
+                      onChange={[MockFunction]}
+                      type="radio"
+                      value="harassment"
+                    />
+                  </FormField>
+                  <FormField>
+                    <Radio
+                      checked={false}
+                      label="Rules Violation"
+                      name="rules violation"
+                      onChange={[MockFunction]}
+                      type="radio"
+                      value="rules violation"
+                    />
+                  </FormField>
+                  <Button
+                    as="button"
+                    basic={true}
+                    color="teal"
+                    type="submit"
+                  >
+                    Report
+                  </Button>
+                  <Link
+                    to="/articles/aska"
+                  >
+                    <Button
+                      as="button"
+                      basic={true}
+                    >
+                      Cancel
+                    </Button>
+                  </Link>
+                </Form>
+              </GridColumn>
+              <GridColumn
+                width={4}
+              />
+            </GridRow>
+          </Grid>
+        </Segment>
+      </GridColumn>
+      <GridColumn
+        width={4}
+      />
+    </GridRow>
+  </Grid>
+</Container>
+`;

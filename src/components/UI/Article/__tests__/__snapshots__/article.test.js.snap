@@ -59,7 +59,26 @@ exports[`<Article /> Article will render without crashing 1`] = `
         </Container>
       </GridColumn>
       <GridColumn />
-      <GridColumn />
+      <GridColumn>
+        <Popup
+          content="Report"
+          disabled={false}
+          keepInViewPort={true}
+          on="hover"
+          position="top left"
+          trigger={
+            <Link
+              to="/articles/undefined/report"
+            >
+              <Icon
+                as="i"
+                name="flag"
+                size="large"
+              />
+            </Link>
+          }
+        />
+      </GridColumn>
     </Grid>
   </Container>
 </div>

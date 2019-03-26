@@ -62,6 +62,7 @@ export const getArticle = (slug) => {
         dispatch(articleActionStart());
         try {
             let config = null;
+            const token = localStorage.getItem('token');
             if (token) {
                 config = { headers: { "Authorization": `Bearer ${token}`}};
             };

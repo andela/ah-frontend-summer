@@ -69,12 +69,22 @@ exports[`App rendering tests renders without crashing 1`] = `
           <Route
             component={[Function]}
             exact={true}
+            path="/articles/bookmarks"
+          />
+          <Route
+            component={[Function]}
+            exact={true}
             path="/articles/create"
           />
           <Route
             component={[Function]}
             exact={true}
             path="/articles/update/:slug"
+          />
+          <Route
+            component={[Function]}
+            exact={true}
+            path="/articles/:slug/report"
           />
           <Route
             component={[Function]}
@@ -181,12 +191,22 @@ exports[`App rendering tests renders without crashing 2`] = `
           <Route
             component={[Function]}
             exact={true}
+            path="/articles/bookmarks"
+          />
+          <Route
+            component={[Function]}
+            exact={true}
             path="/articles/create"
           />
           <Route
             component={[Function]}
             exact={true}
             path="/articles/update/:slug"
+          />
+          <Route
+            component={[Function]}
+            exact={true}
+            path="/articles/:slug/report"
           />
           <Route
             component={[Function]}
