@@ -21,6 +21,7 @@ import EditProfileContainer from '../containers/Profiles/EditProfileContainer';
 import FollowersFollowing from '../containers/Profiles/FollowersFollowing';
 import TagsListContainer from "../containers/Tags/TagsListContainer";
 import Bookmarks from "../containers/Articles/Bookmarks";
+import ReportArticle from '../containers/Articles/Article/ReportArticleContainer';
 
 
 const Routes = () => (
@@ -39,6 +40,7 @@ const Routes = () => (
                         <Route path="/articles/bookmarks" exact component={Bookmarks} />
                         <Route path="/articles/create" exact component={CreateArticle} />
                         <Route path="/articles/update/:slug" exact component={UpdateArticle} />
+                        <Route path="/articles/:slug/report" exact component={ReportArticle} />
                         <Route path="/articles/:slug" exact component={Article} />
                         <Route path="/email-verification/:token" exact component={EmailVerificationView} />
                         <Route exact path="/tags/:tag" component={TagArticlesContainer} />

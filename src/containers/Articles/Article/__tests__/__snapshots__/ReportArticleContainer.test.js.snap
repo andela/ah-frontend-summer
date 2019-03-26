@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Report Article Container renders correctly 1`] = `
+<Connect(ReportArticle)
+  onChangeHandler={[Function]}
+  onSubmitHandler={[Function]}
+  reason=""
+  slug="fsd"
+/>
+`;
