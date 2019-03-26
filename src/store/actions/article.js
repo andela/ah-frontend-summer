@@ -3,6 +3,7 @@ import axios from "axios";
 import * as actionTypes from "./actionTypes";
 
 const url = "https://ah-backend-summer-staging.herokuapp.com/api/v1/articles/";
+let token = localStorage.getItem("token");
 
 export const articleActionStart = () => {
     return { type: actionTypes.GET_ARTICLE_START };
@@ -42,7 +43,6 @@ export const actionFinised = () => {
 export const deleteArticle = (slug) => {
     return async dispatch => {
         dispatch(articleActionStart());
-        let token = localStorage.getItem("token");
         try {
             const response = await axios.delete(`${url}` + slug, {
                 headers: {
@@ -61,7 +61,11 @@ export const getArticle = (slug) => {
     return async (dispatch) => {
         dispatch(articleActionStart());
         try {
-            const response = await axios.get(`${url}${slug}`);
+            let config = null;
+            if (token) {
+                config = { headers: { "Authorization": `Bearer ${token}`}};
+            };
+            const response = await axios.get(`${url}${slug}`, config);
             dispatch(getArticleSuccess(response.data));
         } catch (error) {
             dispatch(getArticleFail(error.response.data));
@@ -86,7 +90,6 @@ export const createArticleFail = (error) => {
 
 export const createArticle = (data) => {
     return async dispatch => {
-        let token = localStorage.getItem("token");
         let config = {
             headers: {
                 "Authorization": `Bearer ${token}`
@@ -128,5 +131,79 @@ export const updateArticle = (slug, data) => {
         } catch (error) {
             dispatch(updateArticleFail(error.response.data));
         }
+    };
+};
+
+const actionFailed = (error) => {
+    return {
+        type: actionTypes.LIKE_DISLIKE_ACTION_FAILED,
+        error
+    };
+};
+
+const actionSucceded = (data) => {
+    return {
+        type: actionTypes.LIKE_DISLIKE_ACTION_SUCCESSED,
+        data
+    };
+};
+
+export const likeArticle = (slug) => {
+    return async dispatch => {
+        let config = { headers: { "Authorization": `Bearer ${token}` }};
+        try {
+            const response = await axios.post(`${url}${slug}/like`,
+                {}, config);
+            const articleResponse = await axios.get(`${url}${slug}`,
+                config);
+            dispatch(getArticleSuccess(articleResponse.data));
+            dispatch(actionSucceded(response.data));
+        } catch (error) {
+            dispatch(actionFailed(error.response.data));
+        };
+    };
+};
+
+export const revertLike = (slug) => {
+    return async dispatch => {
+        let config = { headers: { "Authorization": `Bearer ${token}` }};
+        try {
+            const response = await axios.delete(`${url}${slug}/like`, config);
+            const articleResponse = await axios.get(`${url}${slug}`, config);
+            dispatch(getArticleSuccess(articleResponse.data));
+            dispatch(actionSucceded(response.data));
+        } catch (error) {
+            dispatch(actionFailed(error.response.data));
+        };
+    };
+};
+
+export const dislikeArticle = (slug) => {
+    return async dispatch => {
+        let config = { headers: { "Authorization": `Bearer ${token}` }};
+        try {
+            const response = await axios.post(`${url}${slug}/dislike`,
+                {}, config);
+            const articleResponse = await axios.get(`${url}${slug}`, config);
+            dispatch(getArticleSuccess(articleResponse.data));
+            dispatch(actionSucceded(response.data));
+        } catch (error) {
+            dispatch(actionFailed(error.response.data));
+        };
+    };
+};
+
+export const revertDislike = (slug) => {
+    return async dispatch => {
+        let config = { headers: { "Authorization": `Bearer ${token}` }};
+        try {
+            const response = await axios.delete(`${url}${slug}/dislike`,
+                config);
+            const articleResponse = await axios.get(`${url}${slug}`, config);
+            dispatch(getArticleSuccess(articleResponse.data));
+            dispatch(actionSucceded(response.data));
+        } catch (error) {
+            dispatch(actionFailed(error.response.data));
+        };
     };
 };

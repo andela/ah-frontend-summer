@@ -14,3 +14,16 @@
 .actionButtons {
     padding: 10px;
 }
+
+.LikeDislikeButton {
+    border: none;
+    cursor: pointer;
+    transition: .3s all;
+    margin-left: 15px;
+    outline: none;
+    background: transparent;
+}
+
+.LikeDislikeButton:active{
+    transform: translateY(2px);
+}

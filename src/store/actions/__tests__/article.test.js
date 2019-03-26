@@ -2,7 +2,16 @@ import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import axios from 'axios';
 
-import { deleteArticle, getArticle, createArticle, updateArticle } from '../article';
+import {
+    deleteArticle,
+    getArticle,
+    createArticle,
+    updateArticle,
+    likeArticle,
+    revertLike,
+    dislikeArticle,
+    revertDislike
+} from '../article';
 import * as actionTypes from '../actionTypes';
 
 describe('testing create article', () => {
@@ -136,6 +145,147 @@ describe('testing update article', () => {
             { type: actionTypes.UPDATE_ARTICLE_FAIL, error: {} }
         ];
         return store.dispatch(updateArticle({})).then(() => {
+            expect(store.getActions()).toEqual(expectedAction);
+        });
+    });
+});
+
+describe('testing like article', () => {
+
+    it('tests liking article succeeds', () => {
+        const mockStore = configureMockStore([thunk]);
+        const store = mockStore({});
+        axios.post.mockResolvedValue({ data: {} });
+        axios.get.mockResolvedValue({ data: {} });
+
+        const expectedAction = [
+            { type: actionTypes.GET_ARTICLE_SUCCESS, data: {} },
+            { type: actionTypes.LIKE_DISLIKE_ACTION_SUCCESSED, data: {} }
+        ];
+
+        return store.dispatch(likeArticle({})).then(() => {
+            expect(store.getActions()).toEqual(expectedAction);
+        });
+    });
+
+    it('tests liking article fails', () => {
+        const mockStore = configureMockStore([thunk]);
+        const store = mockStore({});
+
+        axios.post.mockRejectedValue({ response: { data: {} } });
+        axios.get.mockResolvedValue({ data: {} });
+
+        const expectedAction = [
+            { type: actionTypes.LIKE_DISLIKE_ACTION_FAILED, error: {} }
+        ];
+
+        return store.dispatch(likeArticle({})).then(() => {
+            expect(store.getActions()).toEqual(expectedAction);
+        });
+    });
+});
+
+describe('testing reverting article like', () => {
+
+    it('tests reverting article like succeeds', () => {
+        const mockStore = configureMockStore([thunk]);
+        const store = mockStore({});
+        axios.delete.mockResolvedValue({ data: {} });
+        axios.get.mockResolvedValue({ data: {} });
+
+        const expectedAction = [
+            { type: actionTypes.GET_ARTICLE_SUCCESS, data: {} },
+            { type: actionTypes.LIKE_DISLIKE_ACTION_SUCCESSED, data: {} }
+        ];
+
+        return store.dispatch(revertLike({})).then(() => {
+            expect(store.getActions()).toEqual(expectedAction);
+        });
+    });
+
+    it('tests reverting article like fails', () => {
+        const mockStore = configureMockStore([thunk]);
+        const store = mockStore({});
+
+        axios.delete.mockRejectedValue({ response: { data: {} } });
+        axios.get.mockResolvedValue({ data: {} });
+
+        const expectedAction = [
+            { type: actionTypes.LIKE_DISLIKE_ACTION_FAILED, error: {} }
+        ];
+
+        return store.dispatch(revertLike({})).then(() => {
+            expect(store.getActions()).toEqual(expectedAction);
+        });
+    });
+});
+
+
+describe('testing dislike article', () => {
+
+    it('tests liking article succeeds', () => {
+        const mockStore = configureMockStore([thunk]);
+        const store = mockStore({});
+        axios.post.mockResolvedValue({ data: {} });
+        axios.get.mockResolvedValue({ data: {} });
+
+        const expectedAction = [
+            { type: actionTypes.GET_ARTICLE_SUCCESS, data: {} },
+            { type: actionTypes.LIKE_DISLIKE_ACTION_SUCCESSED, data: {} }
+        ];
+
+        return store.dispatch(dislikeArticle({})).then(() => {
+            expect(store.getActions()).toEqual(expectedAction);
+        });
+    });
+
+    it('tests liking article fails', () => {
+        const mockStore = configureMockStore([thunk]);
+        const store = mockStore({});
+
+        axios.post.mockRejectedValue({ response: { data: {} } });
+        axios.get.mockResolvedValue({ data: {} });
+
+        const expectedAction = [
+            { type: actionTypes.LIKE_DISLIKE_ACTION_FAILED, error: {} }
+        ];
+
+        return store.dispatch(dislikeArticle({})).then(() => {
+            expect(store.getActions()).toEqual(expectedAction);
+        });
+    });
+});
+
+describe('testing reverting article dislike', () => {
+
+    it('tests reverting article dislike succeeds', () => {
+        const mockStore = configureMockStore([thunk]);
+        const store = mockStore({});
+        axios.delete.mockResolvedValue({ data: {} });
+        axios.get.mockResolvedValue({ data: {} });
+
+        const expectedAction = [
+            { type: actionTypes.GET_ARTICLE_SUCCESS, data: {} },
+            { type: actionTypes.LIKE_DISLIKE_ACTION_SUCCESSED, data: {} }
+        ];
+
+        return store.dispatch(revertDislike({})).then(() => {
+            expect(store.getActions()).toEqual(expectedAction);
+        });
+    });
+
+    it('tests reverting article dislike fails', () => {
+        const mockStore = configureMockStore([thunk]);
+        const store = mockStore({});
+
+        axios.delete.mockRejectedValue({ response: { data: {} } });
+        axios.get.mockResolvedValue({ data: {} });
+
+        const expectedAction = [
+            { type: actionTypes.LIKE_DISLIKE_ACTION_FAILED, error: {} }
+        ];
+
+        return store.dispatch(revertDislike({})).then(() => {
             expect(store.getActions()).toEqual(expectedAction);
         });
     });

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Button, Header, Image, Icon } from 'semantic-ui-react';
+import { Container, Button, Header, Image, Icon, Grid } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 import renderHTML from 'react-render-html';
 import TagCard from '../../tags/TagCard';
@@ -22,7 +22,13 @@ const article = (props) => {
         twitter,
         email,
         tags,
-        handleOnClick
+        handleOnClick,
+        likes,
+        dislikes,
+        likeArticle,
+        userLikesArticle,
+        userDislikesArticle,
+        dislikeArticle
     } = props;
     const renderedBody = renderHTML(body)
     const defautImage = 'https://images.pexels.com/photos/1591057/pexels-photo-1591057.jpeg?cs=srgb&dl=buttons-characters-concept-1591057.jpg&fm=jpg';
@@ -72,14 +78,44 @@ const article = (props) => {
                         ))}
                     </Container>
                 </div>
+                <Grid columns={3} stackable>
+                    <Grid.Column>
+                        <Container textAlign='left'>
+                            <button
+                                className="LikeDislikeButton"
+                                onClick={likeArticle}>
+                                { userLikesArticle ?  
+                                    <Icon size='large' name='thumbs up' color='teal'/>
+                                    : <Icon size='large' name='thumbs up outline'/>
+                                }
+                                
+                            </button> <span>{likes}</span>
+                            <button
+                                className="LikeDislikeButton"
+                                onClick={dislikeArticle}>
+                                { userDislikesArticle ?  
+                                    <Icon size='large' name='thumbs down' color='teal'/>
+                                    : <Icon size='large' name='thumbs down outline'/>
+                                }
+                            </button>
+                            <span>{dislikes}</span>
+                        </Container>
+                    </Grid.Column>
+                    <Grid.Column>
+                        {isLoggedIn ? (
+                            <Container textAlign="center">
+                                <a href={facebook} className="facebook"><Icon name="facebook f" /></a>
+                                <a href={twitter} className="twitter"><Icon name="twitter" /></a>
+                                <a href={email} className="email"><Icon name="mail" /></a>
+                            </Container>
+                        ) : ""}
+                    </Grid.Column>
+                    <Grid.Column>
+                        
+                    </Grid.Column>
+                </Grid>
+               
             </Container>
-            {isLoggedIn ? (
-                <Container textAlign="center">
-                    <a href={facebook} className="facebook"><Icon name="facebook f" /></a>
-                    <a href={twitter} className="twitter"><Icon name="twitter" /></a>
-                    <a href={email} className="email"><Icon name="mail" /></a>
-                </Container>
-            ) : ""}
         </div>
     );
 };

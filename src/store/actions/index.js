@@ -12,5 +12,9 @@ export {
 	getArticle,
 	deleteArticle,
 	createArticle,
-	updateArticle
+	updateArticle,
+	likeArticle,
+	revertLike,
+	dislikeArticle,
+	revertDislike
 } from './article';
