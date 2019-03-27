@@ -20,7 +20,11 @@ import {
 } from "../actionTypes";
 
 const fetchComments = (slug) => {
-    return axios.get(`${URL}/articles/${slug}/comments`);
+    if(localStorage.getItem("token")){
+        return axios.get(`${URL}/articles/${slug}/comments`, get_axios_config());
+    }else{
+        return axios.get(`${URL}/articles/${slug}/comments`);
+    }
 };
 
 const createComment = (slug, body) => {
@@ -51,6 +55,7 @@ const updateReply = (pk, commentPk, body) => {
 const deleteReply = (pk) => {
     return axios.delete(`${URL}/articles/comments/replies/${pk}`, get_axios_config());
 };
+
 
 // comment actions
 export const fetchCommentsAction = createActionThunk(FETCH_COMMENTS_ACTION, fetchComments, true);

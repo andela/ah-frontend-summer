@@ -124,7 +124,6 @@ export const commentsReducer = (state = defaultCommentsState, action) => {
         newState.deleteComment.deleting = 0;
         return newState;
     }
-
     default:
         return state;
     }

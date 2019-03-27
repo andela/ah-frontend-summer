@@ -10,6 +10,8 @@ exports[`Navbar test should render Navbar with default state 1`] = `
       header={true}
     >
       <NavLink
+        activeClassName="active"
+        aria-current="page"
         to="/"
       >
         <Image
@@ -27,6 +29,8 @@ exports[`Navbar test should render Navbar with default state 1`] = `
         name="menu"
       >
         <NavLink
+          activeClassName="active"
+          aria-current="page"
           to="/"
         >
           Home
@@ -37,6 +41,8 @@ exports[`Navbar test should render Navbar with default state 1`] = `
         name="tags"
       >
         <NavLink
+          activeClassName="active"
+          aria-current="page"
           to="/tags"
         >
           Tags
@@ -50,6 +56,8 @@ exports[`Navbar test should render Navbar with default state 1`] = `
           name="signIn"
         >
           <NavLink
+            activeClassName="active"
+            aria-current="page"
             to="/login"
           >
             Sign in
@@ -57,6 +65,8 @@ exports[`Navbar test should render Navbar with default state 1`] = `
         </MenuItem>
         <MenuItem>
           <NavLink
+            activeClassName="active"
+            aria-current="page"
             to="/signup"
           >
             <Button
@@ -85,6 +95,8 @@ exports[`Navbar test should render Navbar with logged in state 1`] = `
       header={true}
     >
       <NavLink
+        activeClassName="active"
+        aria-current="page"
         to="/"
       >
         <Image
@@ -102,6 +114,8 @@ exports[`Navbar test should render Navbar with logged in state 1`] = `
         name="menu"
       >
         <NavLink
+          activeClassName="active"
+          aria-current="page"
           to="/"
         >
           Home
@@ -112,6 +126,8 @@ exports[`Navbar test should render Navbar with logged in state 1`] = `
         name="tags"
       >
         <NavLink
+          activeClassName="active"
+          aria-current="page"
           to="/tags"
         >
           Tags
@@ -125,6 +141,8 @@ exports[`Navbar test should render Navbar with logged in state 1`] = `
           name="signIn"
         >
           <NavLink
+            activeClassName="active"
+            aria-current="page"
             to="/login"
           >
             Sign in
@@ -132,6 +150,8 @@ exports[`Navbar test should render Navbar with logged in state 1`] = `
         </MenuItem>
         <MenuItem>
           <NavLink
+            activeClassName="active"
+            aria-current="page"
             to="/signup"
           >
             <Button
