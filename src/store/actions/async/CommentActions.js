@@ -33,7 +33,7 @@ export function isLoggedIn(localStorage){
     return getLoggedInUser(localStorage).length > 0;
 }
 
-function get_axios_config(){
+export function get_axios_config(){
     return {
         headers: {
             Authorization: "Bearer " + getToken(localStorage)
@@ -41,10 +41,14 @@ function get_axios_config(){
     };
 }
 
-const URL = "https://ah-backend-summer-staging.herokuapp.com/api/v1";
+export const URL = "https://ah-backend-summer-staging.herokuapp.com/api/v1";
 
 const fetchComments = (slug) => {
-    return axios.get(`${URL}/articles/${slug}/comments`);
+    if(localStorage.getItem("token")){
+        return axios.get(`${URL}/articles/${slug}/comments`, get_axios_config());
+    }else{
+        return axios.get(`${URL}/articles/${slug}/comments`);
+    }
 };
 
 const createComment = (slug, body) => {
@@ -75,6 +79,7 @@ const updateReply = (pk, commentPk, body) => {
 const deleteReply = (pk) => {
     return axios.delete(`${URL}/articles/comments/replies/${pk}`, get_axios_config());
 };
+
 
 // comment actions
 export const fetchCommentsAction = createActionThunk(FETCH_COMMENTS_ACTION, fetchComments, true);

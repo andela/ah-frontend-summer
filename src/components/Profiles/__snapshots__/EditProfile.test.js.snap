@@ -57,6 +57,7 @@ exports[`EditProfile renders correctly 1`] = `
                 Edit Profile
               </Button>
               <Link
+                replace={false}
                 to="/"
               >
                 <Button
