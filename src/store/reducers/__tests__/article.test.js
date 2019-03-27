@@ -32,17 +32,16 @@ describe("Article reducer", () => {
             averageRating: null,
             error: "article loading",
             loading: false,
-            message: "",
-            
+            message: ""
         });
     });
 
     it("should update article value in state if action is success", () => {
         expect(articleReducer(undefined, {
             type: actionTypes.GET_ARTICLE_SUCCESS,
-            data: { articles: "successfull" }
+            data: { articles: "successful" }
         })).toEqual({
-            article: "successfull",
+            article: "successful",
             error: null,
             loading: false,
             message: ""
@@ -94,7 +93,7 @@ describe("Article reducer", () => {
             error: "failed creating an article"
         })).toEqual({
             article: null,
-            averageRating:null,
+            averageRating: null,
             error: "failed creating an article",
             loading: false,
             message: ""
@@ -104,9 +103,10 @@ describe("Article reducer", () => {
     it("should update article value if delete action is dispatched", () => {
         expect(articleReducer(undefined, {
             type: actionTypes.DELETE_ARTICLE,
-            data:  {articles: "deleted"} })).toEqual({
+            data: { articles: "deleted" }
+        })).toEqual({
             article: "deleted",
-            averageRating:null,
+            averageRating: null,
             error: null,
             loading: false,
             message: ""
@@ -114,7 +114,7 @@ describe("Article reducer", () => {
     });
 
     it("should return initial state if is action ended", () => {
-        expect(articleReducer(undefined, {type: actionTypes.ACTION_ENDED})).toEqual({
+        expect(articleReducer(undefined, { type: actionTypes.ACTION_ENDED })).toEqual({
             article: null,
             averageRating: null,
             error: null,
@@ -122,5 +122,5 @@ describe("Article reducer", () => {
             message: ""
         });
     });
-    
+
 });

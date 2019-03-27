@@ -120,7 +120,7 @@ export const updateArticleFail = (error) => {
 export const updateArticle = (slug, data) => {
     return async dispatch => {
         let token = localStorage.getItem("token");
-        let config = { headers: {"Authorization": `Bearer ${token}`} };
+        let config = { headers: { "Authorization": `Bearer ${token}` } };
         dispatch(articleActionStart());
         try {
             const response = await axios.patch(`${url}${slug}`, data, config);
