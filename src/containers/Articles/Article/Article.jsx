@@ -74,6 +74,9 @@ export class Article extends Component {
                     dateCreated={this.created_at}
                     isAuthor={this.isAuthor}
                     image={article.image}
+                    facebook={article.share_links.facebook}
+                    twitter={article.share_links.twitter}
+                    email={article.share_links.email}
                 />
             );
         } else if (error) {

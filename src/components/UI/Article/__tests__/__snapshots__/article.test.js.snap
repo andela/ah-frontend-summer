@@ -10,7 +10,6 @@ exports[`<Article /> Article will render without crashing 1`] = `
   </Container>
   <Container>
     <Container>
-       
       <p />
     </Container>
   </Container>
