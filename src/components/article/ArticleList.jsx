@@ -4,9 +4,10 @@ import {Button, Container, Header} from "semantic-ui-react";
 import {Link} from "react-router-dom";
 import ArticleCard from './ArticleCard';
 import ListPagination from './ListPagination';
+import {URL} from "../../store/actions/async/CommentActions";
 
 const ArticleList = (props) => {
-    const { articles, title, paginating } = props;
+    const { articles, title, paginating, url } = props;
     return(
         <Container>
             <div className="article-list">
@@ -16,7 +17,7 @@ const ArticleList = (props) => {
                 {articles.map(article => (
                     <ArticleCard key={article.slug} article={article} />))}
                 {paginating ? (
-                    <ListPagination {...props} />
+                    <ListPagination url={url} {...props} />
                 ) : (
                     <Link className="more-articles-button" to="/articles">
                         <Button size="large" basic color="teal">More Articles</Button>
@@ -33,11 +34,13 @@ const ArticleList = (props) => {
 ArticleList.propTypes = {
     articles: PropTypes.array.isRequired,
     title: PropTypes.string.isRequired,
-    paginating: PropTypes.bool
+    paginating: PropTypes.bool,
+    url: PropTypes.string
 };
 
 ArticleList.defaultProps = {
-    paginating: false
+    paginating: false,
+    url: `${URL}/articles`
 };
 
 export default ArticleList;

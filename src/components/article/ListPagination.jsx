@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Pagination, Grid } from 'semantic-ui-react';
 import '../../styles/Articles.scss';
+import {URL} from "../../store/actions/async/CommentActions";
 
 
 class ListPagination extends Component {
@@ -16,14 +17,16 @@ class ListPagination extends Component {
     }
     maxPageCount = 10;
     onPageChange = (event, data) => {
-        const { fetchArticles } = this.props;
-        const url = 'https://ah-backend-summer-staging.herokuapp.com/api/v1/articles';
+        let { fetchArticles, url } = this.props;
+        // ensure the endpoint ends with a trailing question mark or &
+        // in preparation for pagination params
+        url = (url.indexOf('?') === -1) ? url + '?' : url + '&';
         const initialIndex = 0;
         const limit = (count, index) => 
             `limit=${count}&offset=${index ? index * count : initialIndex}`;
         const page = data.activePage;
         const startPage = 1;
-        const pagination = `?${limit(this.maxPageCount, page - startPage)}`;
+        const pagination = `${limit(this.maxPageCount, page - startPage)}`;
         fetchArticles(url + pagination);
         localStorage.setItem('page', page);
     };
@@ -56,8 +59,13 @@ class ListPagination extends Component {
 }
 
 ListPagination.propTypes = {
+    articleCount: PropTypes.number.isRequired,
     fetchArticles: PropTypes.func.isRequired,
-    articleCount: PropTypes.number.isRequired
+    url: PropTypes.string
+};
+
+ListPagination.defaultProps = {
+    url: `${URL}/articles`
 };
 
 export default ListPagination;

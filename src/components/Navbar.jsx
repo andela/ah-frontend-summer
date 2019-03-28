@@ -29,7 +29,7 @@ export const Navbar = ({ profile }) => {
     );
     const options = [
         { key: 'new-article', text: 'New Article', icon: 'compose', as: Link, to: `/articles/create` },
-        { key: 'bookmark', text: 'Bookmarks', icon: 'bookmark', as: Link, to: `#` },
+        { key: 'bookmark', text: 'Bookmarks', icon: 'bookmark', as: Link, to: `/articles/bookmarks` },
         { key: 'profile', text: 'Profile', icon: 'user', as: Link, to: `/${username}` },
         { key: 'sign-out', text: 'Sign out', icon: 'sign out', as: Link, to: `#` },
     ];

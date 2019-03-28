@@ -20,6 +20,7 @@ import UserProfileContainer from '../containers/Profiles/UserProfileContainer';
 import EditProfileContainer from '../containers/Profiles/EditProfileContainer';
 import FollowersFollowing from '../containers/Profiles/FollowersFollowing';
 import TagsListContainer from "../containers/Tags/TagsListContainer";
+import Bookmarks from "../containers/Articles/Bookmarks";
 
 
 const Routes = () => (
@@ -35,6 +36,7 @@ const Routes = () => (
                     <Switch>
                         <Route path="/" exact component={HomeView} />
                         <Route path="/articles" exact component={ArticlesView} />
+                        <Route path="/articles/bookmarks" exact component={Bookmarks} />
                         <Route path="/articles/create" exact component={CreateArticle} />
                         <Route path="/articles/update/:slug" exact component={UpdateArticle} />
                         <Route path="/articles/:slug" exact component={Article} />
