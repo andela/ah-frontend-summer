@@ -41,7 +41,7 @@ function get_axios_config(){
     };
 }
 
-const URL = "https://ah-backend-summer-staging.herokuapp.com/api/v1";
+export const URL = "https://ah-backend-summer-staging.herokuapp.com/api/v1";
 
 const fetchComments = (slug) => {
     return axios.get(`${URL}/articles/${slug}/comments`);

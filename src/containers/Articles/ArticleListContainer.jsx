@@ -7,6 +7,7 @@ import { fetchArticlesAction } from '../../store/actions/async/ArticleActions';
 import ArticleLoading from "../../components/article/ArticleLoading";
 import ArticleError from "../../components/article/ArticleError";
 import {FAILED, SUCCEEDED} from "../../store/actions/async";
+import {URL} from "../../store/actions/async/CommentActions";
 
 export class ArticleListContainer extends Component {
 
@@ -14,16 +15,15 @@ export class ArticleListContainer extends Component {
         this.fetchArticles();
     }
     fetchArticles = () => {
-        const { loading } = this.props;
+        const { loading, url } = this.props;
         if (loading){
             return;
         }
-        const url = 'https://ah-backend-summer-staging.herokuapp.com/api/v1/articles';
         const { fetchArticles } = this.props;
         fetchArticles(url);
     };
     render() {
-        const { loading, status } = this.props;
+        const { loading, status, url } = this.props;
         let toRender;
 
         if (loading){
@@ -33,7 +33,7 @@ export class ArticleListContainer extends Component {
             toRender = <ArticleError retry={this.fetchArticles} />;
         }
         else if(status === SUCCEEDED){
-            toRender= <ArticleList {...this.props} />;
+            toRender= <ArticleList url={url} {...this.props} />;
         }
         else{
             toRender = 'Could not load Articles';
@@ -75,10 +75,12 @@ ArticleListContainer.propTypes = {
     loading: PropTypes.bool,
     status: PropTypes.string.isRequired,
     fetchArticles : PropTypes.func.isRequired,
+    url: PropTypes.string
 };
 
 ArticleListContainer.defaultProps = {
     loading: true,
+    url: `${URL}/articles`
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(ArticleListContainer);

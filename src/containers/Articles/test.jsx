@@ -6,6 +6,7 @@ import ArticleLoading from "../../components/article/ArticleLoading";
 import ArticleCard from "../../components/article/ArticleCard";
 import {FAILED, SUCCEEDED} from "../../store/actions/async";
 import ArticleError from "../../components/article/ArticleError";
+import Bookmarks from "./Bookmarks";
 
 const article = {
     "slug": "test",
@@ -56,6 +57,12 @@ describe('ArticleList Container Tests', () => {
         it('renders correctly when status is failed', () => {
             let articleListContainerWrapper = shallow(<ArticleListContainer title="test" status={FAILED} loading={false} fetchArticles={() => {}} articles={[article, article]} />);
             expect(articleListContainerWrapper.exists(ArticleError)).toBeTruthy();
+        });
+    });
+
+    describe('Bookmarks Tests', () => {
+        it('renders without crashing', () => {
+            shallow(<Bookmarks />);
         });
     });
 });
