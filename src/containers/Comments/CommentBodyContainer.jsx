@@ -25,6 +25,10 @@ class CommentBodyContainer extends Component {
         body: this.props.body
     };
 
+    shouldComponentUpdate(nextProps, nextState, nextContext) {
+        return !!this.editor;
+    }
+
     componentDidUpdate(prevProps) {
         const {loading, status, finishEditing} = this.props;
         if (prevProps.loading && !loading) {
@@ -68,6 +72,9 @@ class CommentBodyContainer extends Component {
                         this.setState({
                             body: editor.getData()
                         });
+                    }}
+                    onInit={(editor) => {
+                        this.editor = editor;
                     }}
                 />
                 {buttons}
