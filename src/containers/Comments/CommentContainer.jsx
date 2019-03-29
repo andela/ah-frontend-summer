@@ -23,8 +23,7 @@ class CommentContainer extends Component {
                 editComment={editComment} type="comment"
                 deleteLoading={deleteLoading}
                 deleteComment={() => this.deleteComment()} {...this.props} />
-        );
-    }
+        )}
 }
 
 export const mapDispatchToProps = (dispatch) => {

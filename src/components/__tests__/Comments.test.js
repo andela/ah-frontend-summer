@@ -7,7 +7,7 @@ import CommentLoading from "../comments/CommentLoading";
 import ConfirmationPopup from "../comments/ConfirmationPopup";
 import ReplyList from "../comments/ReplyList";
 import {SUCCEEDED} from "../../store/actions/async";
-
+import LikeDislikeComment from "../comments/LikeDislikeComment";
 const data = {
     comment: {
         "created_at": "2019-03-21T19:31:36.360506+03:00",
@@ -137,5 +137,28 @@ describe('ReplyList tests', () => {
         shallow(<ReplyList commentReplies={[data.reply]} />);
     });
 });
+
+describe('LikeDislikeComments tests', () => {
+    const props = {
+        id: 1,
+        likeCount: 3,
+        dislikeCount:1
+    };
+    const wrapper = shallow(< LikeDislikeComment {...props}/>);
+
+    it('renders without crashing', () => {
+        wrapper;
+    });
+
+    it('renders consistently', () => {
+        expect(wrapper).toMatchSnapshot();
+    });
+
+    it('calls like like function', () => {
+        expect(wrapper.find("Icon")).toBeTruthy();
+    });
+
+});
+
 
 export default data;
