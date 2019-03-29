@@ -1,6 +1,13 @@
 import axios from 'axios';
 import {createActionThunk} from 'redux-thunk-actions';
-import {ENDED, FAILED, STARTED, SUCCEEDED} from "./index";
+import {
+    ENDED,
+    FAILED,
+    get_axios_config,
+    STARTED,
+    SUCCEEDED,
+    URL
+} from "./index";
 import {
     CREATE_COMMENT_ACTION,
     CREATE_REPLY_ACTION,
@@ -11,37 +18,6 @@ import {
     UPDATE_COMMENT_ACTION,
     UPDATE_REPLY_ACTION
 } from "../actionTypes";
-
-
-export function getToken(localStorage) {
-    const token = localStorage.getItem('token');
-    if ((typeof token === "undefined") || token === null || token.length < 1){
-        throw "Not logged in";
-    }
-    return token;
-}
-
-export function getLoggedInUser(localStorage) {
-    const username = localStorage.getItem('username');
-    if ((typeof username === "undefined") || username === null || username.length < 1){
-        return "";
-    }
-    return username;
-}
-
-export function isLoggedIn(localStorage){
-    return getLoggedInUser(localStorage).length > 0;
-}
-
-function get_axios_config(){
-    return {
-        headers: {
-            Authorization: "Bearer " + getToken(localStorage)
-        }
-    };
-}
-
-export const URL = "https://ah-backend-summer-staging.herokuapp.com/api/v1";
 
 const fetchComments = (slug) => {
     return axios.get(`${URL}/articles/${slug}/comments`);

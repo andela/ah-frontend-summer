@@ -5,11 +5,9 @@ import {Button, Comment, Header} from "semantic-ui-react";
 import {Link} from "react-router-dom";
 import CommentList from "../../components/comments/CommentList";
 import {
-    fetchCommentsAction,
-    isLoggedIn
-} from "../../store/actions/async/CommentActions";
+    fetchCommentsAction} from "../../store/actions/async/CommentActions";
 import CommentLoading from "../../components/comments/CommentLoading";
-import {SUCCEEDED} from "../../store/actions/async";
+import {isLoggedIn, SUCCEEDED} from "../../store/actions/async";
 import CommentError from "../../components/comments/CommentError";
 import NewCommentContainer from "./NewCommentContainer";
 

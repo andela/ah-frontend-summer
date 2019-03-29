@@ -1,10 +1,9 @@
 import React, {Component} from "react";
 import {connect} from "react-redux";
 import PropTypes from "prop-types";
-import {SUCCEEDED} from "../../store/actions/async";
+import {getLoggedInUser, SUCCEEDED} from "../../store/actions/async";
 import {
     deleteReplyAction,
-    getLoggedInUser,
     updateReplyAction
 } from "../../store/actions/async/CommentActions";
 import Comment from "../../components/comments/Comment";

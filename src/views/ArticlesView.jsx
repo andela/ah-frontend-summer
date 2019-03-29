@@ -1,6 +1,6 @@
 import React from 'react';
 import ArticleListContainer from "../containers/Articles/ArticleListContainer";
-import {URL} from "../store/actions/async/CommentActions";
+import {URL} from "../store/actions/async";
 
 
 const ArticlesView = () => (

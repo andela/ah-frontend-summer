@@ -1,6 +1,8 @@
 import articleReducer from "../article";
 
 import * as actionTypes from "../../actions/actionTypes";
+import {SUCCEEDED} from "../../actions/async";
+import {BOOKMARK, UNDO_BOOKMARK} from "../../actions/async/ArticleActions";
 
 describe("Article reducer", () => {
     it("should return initial state if no action", () => {
@@ -123,4 +125,25 @@ describe("Article reducer", () => {
         });
     });
 
+    describe('bookmark tests', () => {
+        it("should correctly set favoritesCount, favorited_by, favorited on bookmark success", () => {
+            expect(articleReducer({article: {favoritesCount: 0, favorited_by: [], favorited: false}}, {type: BOOKMARK + SUCCEEDED})).toEqual({
+                article: {
+                    favoritesCount: 1,
+                    favorited_by: [""],
+                    favorited: true
+                }
+            });
+        });
+
+        it("should correctly set favoritesCount, favorited_by, favorited on undo bookmark success", () => {
+            expect(articleReducer({article: {favoritesCount: 2, favorited_by: [""], favorited: true}}, {type: UNDO_BOOKMARK + SUCCEEDED})).toEqual({
+                article: {
+                    favoritesCount: 1,
+                    favorited_by: [],
+                    favorited: false
+                }
+            });
+        });
+    });
 });

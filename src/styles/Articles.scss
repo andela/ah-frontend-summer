@@ -70,6 +70,7 @@ $teal: #008080;
     font-size: 0.6rem;
   }
 }
+
 .facebook{
   color: #4267b2;
   font-size: 24px;
@@ -78,7 +79,13 @@ $teal: #008080;
   color: #38A1F3;
   font-size: 24px;
 }
-.email{
+.email {
   color: red;
   font-size: 24px;
+}
+
+.article-bookmark {
+  float: left;
+  cursor: pointer;
+  margin-bottom: .5rem;
 }

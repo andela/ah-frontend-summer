@@ -5,11 +5,9 @@ import {connect} from "react-redux";
 import {Link} from "react-router-dom";
 import ReplyList from "../../components/comments/ReplyList";
 import {
-    fetchRepliesAction,
-    isLoggedIn
-} from "../../store/actions/async/CommentActions";
+    fetchRepliesAction} from "../../store/actions/async/CommentActions";
 import CommentLoading from "../../components/comments/CommentLoading";
-import {SUCCEEDED} from "../../store/actions/async";
+import {isLoggedIn, SUCCEEDED} from "../../store/actions/async";
 import CommentError from "../../components/comments/CommentError";
 import NewReplyContainer from "./NewReplyContainer";
 

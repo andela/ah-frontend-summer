@@ -136,6 +136,7 @@ describe('CommentReplyListContainer Tests', () => {
 describe('NewCommentContainer Tests', () => {
     it('renders without crashing', () => {
         shallow(<NewCommentContainer
+            placeholder=""
             loading={false} createComment={() => {
             }} status={SUCCEEDED} slug="slug" />);
     });

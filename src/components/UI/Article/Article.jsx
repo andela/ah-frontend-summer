@@ -13,6 +13,7 @@ import renderHTML from 'react-render-html';
 import TagCard from '../../tags/TagCard';
 
 import '../../../assets/styles/Article.scss';
+import BookmarkContainer from "../../../containers/Articles/Article/Bookmark";
 
 const article = (props) => {
     const {
@@ -39,7 +40,7 @@ const article = (props) => {
         dislikeArticle,
         hasReported,
     } = props;
-    const renderedBody = renderHTML(body)
+    const renderedBody = renderHTML(body);
     const defautImage = 'https://images.pexels.com/photos/1591057/pexels-photo-1591057.jpeg?cs=srgb&dl=buttons-characters-concept-1591057.jpg&fm=jpg';
     const isLoggedIn = localStorage.getItem('token');
 
@@ -57,34 +58,39 @@ const article = (props) => {
     return ( 
         <div>
             <Container>
-                <Header as='h1' padded="very">
+                <Header as="h1" padded="very">
                     {title}
                 </Header>
             </Container>
             <Container>
                 {author}
                 <Container>
-                    {dateCreated}
+                    {dateCreated} 
+                    {' '}
                     <p>{readTime}</p>
                 </Container>
             </Container>
-            {isAuthor ? (
-                <div className="actionButtons">
-                    <Container textAlign='right'>
-                        <Button
-                            color="red"
-                            basic
-                            onClick={deleteArticle}>
-                            Delete
-                        </Button>
-                        <Link className="article-card-title" to={`/articles/update/${slug}`}>
-                            <Button color="teal" basic loading={loading}>Update</Button>
-                        </Link>
-                    </Container>
-                </div>
-            ) : null
-            }
-            <Container textAlign='justified'>
+
+            <div className="actionButtons">
+                <Container textAlign="right">
+                    <BookmarkContainer slug={slug} />
+                    { isAuthor ? (
+                        <span>
+                            <Button
+                                color="red"
+                                basic
+                                onClick={deleteArticle}>
+                                Delete
+                            </Button>
+                            <Link className="article-card-title" to={`/articles/update/${slug}`}>
+                                <Button color="teal" basic loading={loading}>Update</Button>
+                            </Link>
+                        </span>
+                    ): null
+                    }
+                </Container>
+            </div>
+            <Container textAlign="justified">
                 <Image src={image ? image : defautImage} />
                 <div className="ArticleBody">
                     {renderedBody}

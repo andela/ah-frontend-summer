@@ -1,4 +1,5 @@
-import {getLoggedInUser, getToken} from "../CommentActions";
+import {getToken} from "..";
+import {getLoggedInUser} from "../index";
 
 const local_storage_mocks = [
     {

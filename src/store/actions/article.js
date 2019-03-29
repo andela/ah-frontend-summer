@@ -1,6 +1,7 @@
 import axios from "axios";
 
 import * as actionTypes from "./actionTypes";
+import {get_axios_config, isLoggedIn} from "./async";
 
 const url = "https://ah-backend-summer-staging.herokuapp.com/api/v1/articles/";
 let token = localStorage.getItem("token");
@@ -65,8 +66,9 @@ export const getArticle = (slug) => {
             const token = localStorage.getItem('token');
             if (token) {
                 config = { headers: { "Authorization": `Bearer ${token}`}};
-            };
+            }
             const response = await axios.get(`${url}${slug}`, config);
+
             dispatch(getArticleSuccess(response.data));
         } catch (error) {
             dispatch(getArticleFail(error.response.data));
