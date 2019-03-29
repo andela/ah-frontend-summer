@@ -4,7 +4,7 @@ import {Button, Container, Header} from "semantic-ui-react";
 import {Link} from "react-router-dom";
 import ArticleCard from './ArticleCard';
 import ListPagination from './ListPagination';
-import {URL} from "../../store/actions/async/CommentActions";
+import {URL} from '../../store/actions/async';
 
 const ArticleList = (props) => {
     const { articles, title, paginating, url } = props;

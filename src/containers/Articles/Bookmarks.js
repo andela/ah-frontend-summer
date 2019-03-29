@@ -1,6 +1,6 @@
 import React from 'react';
 import ArticleListContainer from "./ArticleListContainer";
-import {getLoggedInUser, URL} from "../../store/actions/async/CommentActions";
+import {getLoggedInUser, URL} from "../../store/actions/async";
 
 
 const Bookmarks = () => {

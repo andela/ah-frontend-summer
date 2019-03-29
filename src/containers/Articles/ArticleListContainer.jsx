@@ -6,8 +6,7 @@ import ArticleList from '../../components/article/ArticleList';
 import { fetchArticlesAction } from '../../store/actions/async/ArticleActions';
 import ArticleLoading from "../../components/article/ArticleLoading";
 import ArticleError from "../../components/article/ArticleError";
-import {FAILED, SUCCEEDED} from "../../store/actions/async";
-import {URL} from "../../store/actions/async/CommentActions";
+import {FAILED, SUCCEEDED, URL} from "../../store/actions/async";
 
 export class ArticleListContainer extends Component {
 

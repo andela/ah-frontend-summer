@@ -3,6 +3,7 @@ import { shallow } from 'enzyme';
 
 import { Article, mapDispatchToProps, mapStateToProps } from '../Article';
 import Loader from '../../../../components/UI/Loader';
+import {BookmarkContainer} from "../Bookmark";
 
 describe('tests Article View', () => {
     const push = jest.fn();
@@ -95,5 +96,48 @@ describe('tests Article View', () => {
         mapDispatchToProps(dispatch).onArticleDisliked();
         mapDispatchToProps(dispatch).onRevertingDislike();
         expect(dispatch.mock.calls.length).toBe(6);
+    });
+
+    describe('BookmarkContainer Tests', () => {
+        let props, wrapper, instance;
+
+        beforeEach(() => {
+            props = {
+                slug:"testSlug",
+                loading:false,
+                bookmark:jest.fn(),
+                isBookmarked:false,
+                undoBookmark: jest.fn()
+            };
+
+            wrapper = shallow(<BookmarkContainer {...props} />);
+            instance = wrapper.instance();
+        });
+
+        it('renders without crashing', () => {
+            shallow(<BookmarkContainer {...props} />);
+        });
+
+        it('dispatches bookmark when article is not bookmarked', () => {
+            expect(props.bookmark).toHaveBeenCalledTimes(0);
+            instance.triggerBookmark();
+            expect(props.bookmark).toHaveBeenCalledTimes(1);
+        });
+
+        it('dispatches undoBookmark when article is bookmarked', () => {
+            wrapper.setProps({...props, isBookmarked: true});
+            expect(props.undoBookmark).toHaveBeenCalledTimes(0);
+            instance.triggerBookmark();
+            expect(props.undoBookmark).toHaveBeenCalledTimes(1);
+        });
+
+        it('dispatches no action when loading', () => {
+            wrapper.setProps({...props, loading: true});
+            instance.triggerBookmark();
+            wrapper.setProps({...props, loading: true, isBookmarked: true});
+            instance.triggerBookmark();
+            expect(props.bookmark).toHaveBeenCalledTimes(0);
+            expect(props.undoBookmark).toHaveBeenCalledTimes(0);
+        });
     });
 });

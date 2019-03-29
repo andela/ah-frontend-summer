@@ -4,10 +4,9 @@ import PropTypes from "prop-types";
 import Comment from "../../components/comments/Comment";
 import {
     deleteCommentAction,
-    getLoggedInUser,
     updateCommentAction
 } from "../../store/actions/async/CommentActions";
-import {SUCCEEDED} from "../../store/actions/async";
+import {getLoggedInUser, SUCCEEDED} from "../../store/actions/async";
 
 class CommentContainer extends Component {
     deleteComment() {

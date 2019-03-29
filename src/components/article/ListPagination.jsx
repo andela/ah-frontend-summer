@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Pagination, Grid } from 'semantic-ui-react';
 import '../../styles/Articles.scss';
-import {URL} from "../../store/actions/async/CommentActions";
-
+import {URL} from '../../store/actions/async';
 
 class ListPagination extends Component {
     static currentLocalStorage = (localStorage) => {
