@@ -8,6 +8,7 @@ import CommentReplyListContainer
 import CommentBodyContainer
     from "../../containers/Comments/CommentBodyContainer";
 import ConfirmationPopup from "./ConfirmationPopup";
+import LikeDislikeComment from "./LikeDislikeComment";
 
 class SingleComment extends Component {
     constructor(props) {
@@ -36,10 +37,25 @@ class SingleComment extends Component {
             type,
             loading,
             status,
-            loggedInUser
+            loggedInUser,
         } = this.props;
-        let {author: commentAuthor, created_at: createdAt} = comment;
-        const {first_name: firstName, last_name: lastName, username: userName, image} = commentAuthor;
+
+        let {author: commentAuthor,
+            created_at: createdAt
+        } = comment;
+        const {
+            like_status: liked,
+            dislike_status: disliked,
+            like_count: likeCount,
+            dislike_count: dislikeCount,
+            id
+        } = comment;
+        const {
+            first_name: firstName,
+            last_name: lastName,
+            username: userName,
+            image
+        } = commentAuthor;
         let displayImage = image ? image : avatar;
         // the ideal approach would be to display the author's name
         // however by default the first and last names are empty, so we have
@@ -54,8 +70,13 @@ class SingleComment extends Component {
         const isOwner = userName === loggedInUser;
         const commentOnlyActions = type === "comment" ? (
             <>
-                <Comment.Action>Like</Comment.Action>
-                <Comment.Action>Dislike</Comment.Action>
+                <LikeDislikeComment
+                liked={liked}
+                disliked={disliked}
+                likeCount={likeCount}
+                dislikeCount={dislikeCount}
+                id={id}
+                isOwner={isOwner} />
                 <Comment.Action onClick={() => {
                     this.toggleVisibility(true);
                 }}>

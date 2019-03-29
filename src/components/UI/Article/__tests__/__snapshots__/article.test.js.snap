@@ -10,9 +10,19 @@ exports[`<Article /> Article will render without crashing 1`] = `
   </Container>
   <Container>
     <Container>
+       
       <p />
     </Container>
   </Container>
+  <div
+    className="actionButtons"
+  >
+    <Container
+      textAlign="right"
+    >
+      <withRouter(Connect(BookmarkContainer)) />
+    </Container>
+  </div>
   <Container
     textAlign="justified"
   >
@@ -68,6 +78,7 @@ exports[`<Article /> Article will render without crashing 1`] = `
           position="top left"
           trigger={
             <Link
+              replace={false}
               to="/articles/undefined/report"
             >
               <Icon

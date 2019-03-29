@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LikeDislikeComments tests renders consistently 1`] = `
+<Fragment>
+  <CommentAction
+    as="a"
+  >
+    <Icon
+      as="i"
+      color={null}
+      name="thumbs up"
+      onClick={[Function]}
+      size="large"
+    />
+  </CommentAction>
+  <Label
+    basic={true}
+    color="grey"
+    pointing="left"
+    size="tiny"
+  >
+    3
+  </Label>
+  <CommentAction
+    as="a"
+  />
+  <CommentAction
+    as="a"
+  />
+  <CommentAction
+    as="a"
+  />
+  <CommentAction
+    as="a"
+  >
+    <Icon
+      as="i"
+      color={null}
+      name="thumbs down"
+      onClick={[Function]}
+      size="large"
+    />
+  </CommentAction>
+  <Label
+    basic={true}
+    color="grey"
+    pointing="left"
+    size="tiny"
+  >
+    1
+  </Label>
+  <CommentAction
+    as="a"
+  />
+</Fragment>
+`;

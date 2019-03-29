@@ -35,6 +35,7 @@ const KeyCodes = {
     enter: 13,
 };
 const delimiters = [KeyCodes.comma, KeyCodes.enter];
+const placeholder = 'Add tag & Hit Enter'
 
 const articleForm = (props) => {
     const {
@@ -109,6 +110,7 @@ const articleForm = (props) => {
                             { createMode ? (
                                 <ReactTags
                                     tags={tags}
+                                    placeholder={placeholder}
                                     suggestions={suggestions}
                                     delimiters={delimiters}
                                     handleDelete={handleDelete}
@@ -130,7 +132,7 @@ const articleForm = (props) => {
                             </Button>
                         </div>
                     </Form>
-                        
+
                 </Segment>
             </Container>
         </div>

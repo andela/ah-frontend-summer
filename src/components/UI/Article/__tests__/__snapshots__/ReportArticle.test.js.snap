@@ -68,6 +68,7 @@ exports[`Report Article renders correctly 1`] = `
                     Report
                   </Button>
                   <Link
+                    replace={false}
                     to="/articles/aska"
                   >
                     <Button
